@@ -1079,9 +1079,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 5.5204597, y: 12.630178, z: 0.28998333}
+    m_Target: {x: 5.725795, y: 12.475888, z: 0.24910715}
     speed: 2
-    m_Value: {x: 5.5204597, y: 12.630178, z: 0.28998333}
+    m_Value: {x: 5.725795, y: 12.475888, z: 0.24910715}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1127,9 +1127,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.3057044, y: -0.6280651, z: 0.29494855, w: 0.6523996}
+    m_Target: {x: 0.33498132, y: -0.61959255, z: 0.33101106, w: 0.62838316}
     speed: 2
-    m_Value: {x: -0.30570439, y: 0.6280651, z: -0.29494855, w: -0.6523996}
+    m_Value: {x: -0.33498132, y: 0.61959255, z: -0.33101106, w: -0.62838316}
   m_Size:
     m_Target: 1.2482891
     speed: 2
@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Bernas\Desktop\Light-Game
+  m_LastProjectPath: C:\Users\Bernas\Desktop\Light-Game2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
