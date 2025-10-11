@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 41
+  controlID: 51
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -459,9 +459,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7aeb0000
-      m_LastClickedID: 60282
-      m_ExpandedIDs: c04bffff3650ffff
+      m_SelectedIDs: 80ab0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: ecfaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1079,9 +1079,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 5.9016657, y: 12.369456, z: 0.30238146}
+    m_Target: {x: 5.5204597, y: 12.630178, z: 0.28998333}
     speed: 2
-    m_Value: {x: 5.9016657, y: 12.369456, z: 0.30238146}
+    m_Value: {x: 5.5204597, y: 12.630178, z: 0.28998333}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1127,9 +1127,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.36834297, y: -0.5914063, z: 0.34771356, w: 0.6278502}
+    m_Target: {x: 0.3057044, y: -0.6280651, z: 0.29494855, w: 0.6523996}
     speed: 2
-    m_Value: {x: 0.36782643, y: -0.59199977, z: 0.34806156, w: 0.62697124}
+    m_Value: {x: 0.30562177, y: -0.62789536, z: 0.29486883, w: 0.6522233}
   m_Size:
     m_Target: 1.2482891
     speed: 2
@@ -1214,7 +1214,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1224,16 +1224,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Bernas\Desktop\Unity Projects\Light game
+  m_LastProjectPath: C:\Users\Bernas\Desktop\Light-Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 22eb0000
-    m_LastClickedID: 60194
-    m_ExpandedIDs: 0000000018eb000000ca9a3bffffff7f
+    m_SelectedIDs: aaae0000
+    m_LastClickedID: 44714
+    m_ExpandedIDs: 00000000aaae000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1262,7 +1262,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000aaae0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300005a8f000028900000927c00000000000060b00000a4b10000589600008c9d000024030000
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
