@@ -61,8 +61,9 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.2.5f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\RepLauncherHold.cs" />
     <Compile Include="Assets\Scripts\EnemyMoveScript.cs" />
-    <Compile Include="Assets\Scripts\RocketLauncher Script.cs" />
+    <Compile Include="Assets\Scripts\RepLauncherClick.cs" />
     <Compile Include="Assets\Scripts\TargetClosest Script.cs" />
     <Compile Include="Assets\Scripts\TargetClick Script.cs" />
     <Compile Include="Assets\Scripts\GroundMover Script.cs" />

@@ -6,7 +6,7 @@ public class TargetClickScript : MonoBehaviour
     private int currentIndex = -1;
     private GameObject player;
 
-    public GameObject Target { get; private set; } // 👈 alvo público e acessível
+    public GameObject Target { get; private set; } 
     public float targetSpeed = 50f;
 
     void Awake()
@@ -28,7 +28,7 @@ public class TargetClickScript : MonoBehaviour
             Target = SwitchTarget();
         }
 
-        // opcional: mover este objeto para o alvo
+
         if (Target != null)
         {
             transform.position = Vector3.MoveTowards(
@@ -36,6 +36,10 @@ public class TargetClickScript : MonoBehaviour
                 Target.transform.position,
                 targetSpeed * Time.deltaTime
             );
+        }
+        else
+        {
+            Target = FindClosestEnemy();
         }
     }
 
@@ -58,7 +62,26 @@ public class TargetClickScript : MonoBehaviour
             currentIndex = 0;
 
         Target = enemies[currentIndex];
-        Debug.Log($"Novo alvo: {Target.name}");
         return Target;
+    }
+
+    private GameObject FindClosestEnemy()
+    {
+
+        RefreshEnemies();
+        GameObject closest = null;
+        float closestDistance = 9999f;
+
+        //Por cada inimigo presente vamos buscar o mais próximo do player
+        foreach (GameObject go in enemies)
+        {
+            float distance = Vector3.Distance(go.transform.position, player.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closest = go;
+            }
+        }
+        return closest;
     }
 }

@@ -67,7 +67,7 @@ public class TargetClosestScript : MonoBehaviour
                 closest = go;
             }
         }
-        Debug.Log(closest);
+   
         return closest;
     }
 }

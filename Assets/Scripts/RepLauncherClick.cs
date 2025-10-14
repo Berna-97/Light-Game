@@ -1,18 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketLauncher : MonoBehaviour
+public class RepLauncherClick : MonoBehaviour
 {
     public GameObject rocketPrefab;
     public GameObject spawnPosition;
     public float speed = 10f;
 
     private TargetClickScript targetSystem;
-    private List<RepetitionScript> activeRockets = new List<RepetitionScript>();
+    private List<Repetition> activeRockets = new List<Repetition>();
 
     void Start()
     {
-        targetSystem = FindObjectOfType<TargetClickScript>();
+        targetSystem = FindFirstObjectByType<TargetClickScript>();
 
         if (targetSystem == null)
             Debug.LogWarning("TargetClickScript não encontrado!");
@@ -26,9 +26,9 @@ public class RocketLauncher : MonoBehaviour
             if (rocketPrefab == null || spawnPosition == null) return;
 
             GameObject rocketObj = Instantiate(rocketPrefab, spawnPosition.transform.position, Quaternion.identity);
-            RepetitionScript rocket = rocketObj.AddComponent<RepetitionScript>();
+            Repetition rocket = rocketObj.AddComponent<Repetition>();
 
-            rocket.speed = speed;
+            //rocket.speed = speed;
             rocket.SetTarget(targetSystem.Target); // passa o alvo atual
 
             activeRockets.Add(rocket);

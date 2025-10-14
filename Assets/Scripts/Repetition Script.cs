@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RepetitionScript : MonoBehaviour
+public class Repetition : MonoBehaviour
 {
     public GameObject target;
     public float speed = 10f;
@@ -14,8 +14,9 @@ public class RepetitionScript : MonoBehaviour
     void Update()
     {
         if (target == null)
-            return;
-
+        {
+            Destroy(gameObject); return;
+        }
         // Move em direção ao alvo
         transform.position = Vector3.MoveTowards(
             transform.position,

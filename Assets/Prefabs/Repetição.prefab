@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3742003424010502492}
   m_Layer: 0
   m_Name: "Repeti\xE7\xE3o"
-  m_TagString: Untagged
+  m_TagString: Repetition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 360815009769101409}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3781083, y: 0, z: 0.5898542}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0376, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 1255989495574489703}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9238797, z: -0, w: -0.38268316}
-  m_LocalPosition: {x: -0.4843865, y: -0.42199996, z: 0.2653094}
+  m_LocalPosition: {x: -0.3413865, y: -0.42199996, z: 0.2653094}
   m_LocalScale: {x: 0.02579689, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -172,7 +172,7 @@ Transform:
   m_GameObject: {fileID: 5692987448415108602}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.38268322, z: -0, w: 0.9238797}
-  m_LocalPosition: {x: 0.227, y: -0.422, z: 0.2427882}
+  m_LocalPosition: {x: 0.37, y: -0.422, z: 0.2427882}
   m_LocalScale: {x: 0.025796888, y: 1, z: 1.0637}
   m_ConstrainProportionsScale: 0
   m_Children: []
