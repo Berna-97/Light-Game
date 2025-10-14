@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
-using UnityEngine;
-using UnityEngine;
-using UnityEngine;
-using UnityEngine;
-using UnityEngine;
-using UnityEngine;
 
-public class TargetClickScript : MonoBehaviour
+public class TargetHoldScript : MonoBehaviour
 {
     private GameObject[] enemies;
     private int currentIndex = -1;
     private GameObject player;
+    private float timer = 0;
+    public float holdTime = 0.1f;
+    private bool hasHeld = false;
+    private bool hasSwitched = false;
 
     public GameObject Target { get; private set; } 
     public float targetSpeed = 50f;
@@ -29,13 +27,32 @@ public class TargetClickScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
-            Target = SwitchTarget();
+            timer += Time.deltaTime;
+
+            if (!hasHeld )
+            {
+                hasHeld = true;
+            }
+
+            if (timer > holdTime && !hasSwitched)
+            {
+                Target = SwitchTarget();
+                hasSwitched = true;
+            }
+            
+        }
+
+        if (Input.GetMouseButtonUp(1) && hasHeld)
+        {
+            hasSwitched = false;
+            hasHeld = false;
+            timer = 0;
         }
 
 
-        if (Target != null)
+            if (Target != null)
         {
             transform.position = Vector3.MoveTowards(
                 transform.position,

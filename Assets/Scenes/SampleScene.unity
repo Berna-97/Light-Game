@@ -2130,7 +2130,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474944349}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e56e4d3d55b73614abeda5372eed29c1, type: 3}
   m_Name: 
@@ -2160,7 +2160,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474944349}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e50fe0b71120b5843b0d57726c9e1265, type: 3}
   m_Name: 
@@ -2168,9 +2168,9 @@ MonoBehaviour:
   rocketPrefab: {fileID: 360815009769101409, guid: 32ae6bb4aa1703740b7a54db370d49dd, type: 3}
   spawnPosition: {fileID: 753567473}
   speed: 10
-  initialSpacing: 0
   spacing: 0.2
   timer: 0
+  spawnRate: 0.3
 --- !u!1 &493532592
 GameObject:
   m_ObjectHideFlags: 0
@@ -5072,6 +5072,7 @@ GameObject:
   - component: {fileID: 1837042041}
   - component: {fileID: 1837042040}
   - component: {fileID: 1837042042}
+  - component: {fileID: 1837042043}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -5118,9 +5119,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837042039}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4387422b570d9614ca0083bae5e6bdc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TargetClickScript
+  holdTime: 0.1
+  targetSpeed: 50
+--- !u!114 &1837042043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837042039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8aa1b10d687d714fbd9830b9289556f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetClickScript
   targetSpeed: 50
