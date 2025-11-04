@@ -5,10 +5,18 @@ public class Repetition : MonoBehaviour
     public GameObject target;
     public float speed = 10f;
     public float explodeDistance = 0.5f;
+    public float damage = 1f;
+
+    private EnemyMoveScript enemyScript;
 
     public void SetTarget(GameObject newTarget)
     {
         target = newTarget;
+
+        if (target != null)
+        {
+            enemyScript = target.GetComponent<EnemyMoveScript>();
+        }
     }
 
     void Update()
@@ -17,7 +25,7 @@ public class Repetition : MonoBehaviour
         {
             Destroy(gameObject); return;
         }
-        // Move em direção ao alvo
+        
         transform.position = Vector3.MoveTowards(
             transform.position,
             target.transform.position,
@@ -30,6 +38,11 @@ public class Repetition : MonoBehaviour
         // Destroi ao chegar perto
         if (Vector3.Distance(transform.position, target.transform.position) < explodeDistance)
         {
+            if (enemyScript != null)
+            {
+                enemyScript.TakeDamage(damage);
+            }
+
             Destroy(gameObject);
         }
     }
