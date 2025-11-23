@@ -7,11 +7,11 @@ public class GroundMoverScript : MonoBehaviour
     int groundSpeed = 15;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.Translate(groundSpeed * Time.deltaTime, 0, 0);
 
-        Destroy(gameObject, groundSpeed * Time.deltaTime * 70);
+        Destroy(gameObject, groundSpeed * Time.deltaTime * 30);
 
     }
 }
