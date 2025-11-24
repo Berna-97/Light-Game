@@ -9,10 +9,10 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        // Verifica se o prefab foi atribuído
+        // Verifica se o prefab foi atribuï¿½do
         if (enemyPrefab == null)
         {
-            Debug.LogError("Enemy Prefab não foi atribuído!");
+            Debug.LogError("Enemy Prefab nï¿½o foi atribuï¿½do!");
             enabled = false;
             return;
         }
@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemies()
     {
-        int enemyCount = Random.Range(1, 5); // Números aleatórios entre 1 e 4
+        int enemyCount = Random.Range(1, 5); // Nï¿½meros aleatï¿½rios entre 1 e 4
 
         for (int i = 0; i < enemyCount; i++)
         {
@@ -44,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
 
     private Vector3 GetRandomSpawnPosition()
     {
-        float randomZ = Random.Range(-5f, 5f);
+        float randomZ = Random.Range(-20f, 20f);
         return new Vector3(-20f, 1f, randomZ);
     }
 }
