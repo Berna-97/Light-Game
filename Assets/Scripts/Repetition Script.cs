@@ -4,7 +4,7 @@ public class Repetition : MonoBehaviour
 {
     public GameObject target;
     public float speed = 10f;
-    public float explodeDistance = 0.5f;
+    public float explodeDistance = 2.5f;
     public float damage = 1f;
 
     private EnemyMoveScript enemyScript;
@@ -28,7 +28,7 @@ public class Repetition : MonoBehaviour
         
         transform.position = Vector3.MoveTowards(
             transform.position,
-            target.transform.position,
+            new Vector3(target.transform.position.x, 0, target.transform.position.z),
             speed * Time.deltaTime
         );
 

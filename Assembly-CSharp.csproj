@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\GroundMover Script.cs" />
     <Compile Include="Assets\Scripts\TargetHold Script.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Scripts\RollingGround Script.cs" />
     <Compile Include="Assets\Scripts\Repetition Script.cs" />
   </ItemGroup>

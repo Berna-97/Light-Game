@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class RepLauncherHold : MonoBehaviour
@@ -11,6 +13,8 @@ public class RepLauncherHold : MonoBehaviour
     public float timer = 0;
     private bool hasHeld = false;
     public float spawnRate = 0.3f;
+    public float timeBetweenShots = 0.2f;
+
 
     private TargetClickScript targetSystem;
     private List<Repetition> activeRockets = new List<Repetition>();
@@ -48,18 +52,12 @@ public class RepLauncherHold : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0) && hasHeld) 
         {
-            GameObject[] rep = GameObject.FindGameObjectsWithTag("Repetition");
+
             hasHeld = false;
             timer = 0;
             initialSpacing = 0f;
-            foreach (GameObject go in rep)
-            {
-                Repetition rocket = go.AddComponent<Repetition>();
 
-                rocket.SetTarget(targetSystem.Target); // passa o alvo atual
-
-                activeRockets.Add(rocket);
-            }
+            StartCoroutine(FireRockets());
         }
 
         // Atualiza o alvo de todos os rockets ativos (caso mude)
@@ -72,4 +70,21 @@ public class RepLauncherHold : MonoBehaviour
         // Remove rockets destruídos da lista
         activeRockets.RemoveAll(r => r == null);
     }
+
+    IEnumerator FireRockets()
+    {
+        GameObject[] rep = GameObject.FindGameObjectsWithTag("Repetition");
+        foreach (GameObject go in rep)
+        {
+            Repetition rocket = go.AddComponent<Repetition>();
+
+            rocket.SetTarget(targetSystem.Target); // passa o alvo atual
+
+            
+            activeRockets.Add(rocket);
+            yield return new WaitForSeconds(timeBetweenShots);
+        }
+        yield return null;
+    }
+
 }
