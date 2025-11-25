@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D52B56B5-110B-F6BD-A735-BFC404A2898F}</ProjectGuid>
+    <ProjectGuid>{FA2D6CDF-C13C-1996-4A70-94601A45310B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\EnemyMoveScript.cs" />
     <Compile Include="Assets\Scripts\RepLauncherClick.cs" />
     <Compile Include="Assets\Scripts\TargetClosest Script.cs" />
+    <Compile Include="Assets\Scripts\SettingsMenuManager.cs" />
     <Compile Include="Assets\Scripts\EnemySpawnScript.cs" />
     <Compile Include="Assets\Scripts\CameraChangeLogic.cs" />
     <Compile Include="Assets\Scripts\TargetClick Script.cs" />

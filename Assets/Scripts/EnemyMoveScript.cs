@@ -1,5 +1,6 @@
-using UnityEngine;
-using TMPro; // Add this for TextMeshPro support
+﻿using UnityEngine;
+using TMPro;
+using NUnit.Framework; // Add this for TextMeshPro support
 
 public class EnemyMoveScript : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemyMoveScript : MonoBehaviour
 
     private Transform target;
     private float currentHealth;
+
 
     private void Awake()
     {
@@ -56,5 +58,10 @@ public class EnemyMoveScript : MonoBehaviour
     private void Die()
     {
         Destroy(this.gameObject);
+    }
+
+    private void ChangeForm()
+    {
+
     }
 }

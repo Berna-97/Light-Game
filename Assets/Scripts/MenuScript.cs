@@ -1,9 +1,9 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject optionCanvas;
 
