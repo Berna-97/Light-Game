@@ -1317,6 +1317,8 @@ GameObject:
   m_Component:
   - component: {fileID: 723920835}
   - component: {fileID: 723920834}
+  - component: {fileID: 723920836}
+  - component: {fileID: 723920837}
   m_Layer: 0
   m_Name: Quadrado (2)
   m_TagString: Enemy
@@ -1360,6 +1362,41 @@ Transform:
   - {fileID: 951533499}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -75}
+--- !u!114 &723920836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723920833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac51d80f778d2c4fada3b4d80e6eeb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
+  healthSystem: {fileID: 0}
+  damage: 1
+--- !u!65 &723920837
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723920833}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &767821391
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,6 +2115,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1166777481}
   - component: {fileID: 1166777480}
+  - component: {fileID: 1166777482}
+  - component: {fileID: 1166777483}
   m_Layer: 0
   m_Name: Quadrado (4)
   m_TagString: Enemy
@@ -2121,6 +2160,41 @@ Transform:
   - {fileID: 683860579}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -75}
+--- !u!114 &1166777482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166777479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac51d80f778d2c4fada3b4d80e6eeb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
+  healthSystem: {fileID: 0}
+  damage: 1
+--- !u!65 &1166777483
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166777479}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1199214352
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,6 +3292,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1495353609}
   - component: {fileID: 1495353608}
+  - component: {fileID: 1495353610}
+  - component: {fileID: 1495353611}
   m_Layer: 0
   m_Name: Quadrado (1)
   m_TagString: Enemy
@@ -3261,6 +3337,41 @@ Transform:
   - {fileID: 783473154}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -75}
+--- !u!114 &1495353610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495353607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac51d80f778d2c4fada3b4d80e6eeb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
+  healthSystem: {fileID: 0}
+  damage: 1
+--- !u!65 &1495353611
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495353607}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1574541684
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,6 +3885,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1818811661}
   - component: {fileID: 1818811660}
+  - component: {fileID: 1818811662}
+  - component: {fileID: 1818811663}
   m_Layer: 0
   m_Name: Quadrado (3)
   m_TagString: Enemy
@@ -3817,6 +3930,41 @@ Transform:
   - {fileID: 209050767}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -75}
+--- !u!114 &1818811662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818811659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac51d80f778d2c4fada3b4d80e6eeb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
+  healthSystem: {fileID: 0}
+  damage: 1
+--- !u!65 &1818811663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818811659}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1880615314
 GameObject:
   m_ObjectHideFlags: 0
@@ -3829,8 +3977,9 @@ GameObject:
   - component: {fileID: 1880615317}
   - component: {fileID: 1880615316}
   - component: {fileID: 1880615315}
+  - component: {fileID: 1880615319}
   m_Layer: 0
-  m_Name: '"triangle"'
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3851,7 +4000,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3929,6 +4078,22 @@ Transform:
   - {fileID: 1789977226}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 12.222, y: 43.6, z: -12.664}
+--- !u!114 &1880615319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880615314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a366a990f3c4a1045ab625b56043d07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
+  health: 0
+  maxHealth: 5
+  minHealth: 0
+  damage: 1
 --- !u!1 &1928567203
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,8 +4440,9 @@ GameObject:
   - component: {fileID: 2123087063}
   - component: {fileID: 2123087062}
   - component: {fileID: 2123087061}
+  - component: {fileID: 2123087066}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4387,6 +4553,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2123087066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123087060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a366a990f3c4a1045ab625b56043d07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
+  health: 1
+  maxHealth: 5
+  minHealth: 0
+  damage: 1
 --- !u!1001 &2130824681
 PrefabInstance:
   m_ObjectHideFlags: 0
