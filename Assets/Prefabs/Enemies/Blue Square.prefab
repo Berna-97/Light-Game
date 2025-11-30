@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 6509930272179844047}
   - component: {fileID: 1672596150020406690}
   - component: {fileID: 5461920985321566095}
+  - component: {fileID: 4042470711600504363}
+  - component: {fileID: 9185466387364121853}
+  - component: {fileID: -8351859567473696595}
   m_Layer: 0
   m_Name: Blue Square
   m_TagString: Enemy
@@ -51,7 +54,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -103,12 +106,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fe6df0e2201f4764d9d901e5f2c70e6c, type: 3}
+  m_Sprite: {fileID: 1970215526, guid: fe6df0e2201f4764d9d901e5f2c70e6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.85, y: 2.85}
+  m_Size: {x: 1.36, y: 1.3633333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -130,3 +133,70 @@ MonoBehaviour:
   rotationSpeed: 40
   maxHealth: 4
   healthText: {fileID: 0}
+  spriteRenderer: {fileID: 1672596150020406690}
+  hexagon: {fileID: 21300000, guid: 17ad3820cdef55a48b90ce2c8c3fa689, type: 3}
+  pentagon: {fileID: 21300000, guid: 0926cf1a5654f754fa2bc31b935c79fe, type: 3}
+  square: {fileID: 21300000, guid: fe6df0e2201f4764d9d901e5f2c70e6c, type: 3}
+  triangle: {fileID: 21300000, guid: d35551718fb9b9640a51ade12d6bb922, type: 3}
+--- !u!114 &4042470711600504363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3115433788120932386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac51d80f778d2c4fada3b4d80e6eeb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
+  healthSystem: {fileID: 0}
+  damage: 1
+--- !u!65 &9185466387364121853
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3115433788120932386}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 1.5, z: 0.4}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-8351859567473696595
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3115433788120932386}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using NUnit.Framework; // Add this for TextMeshPro support
+using NUnit.Framework.Internal;
 
 public class EnemyMoveScript : MonoBehaviour
 {
@@ -12,13 +13,20 @@ public class EnemyMoveScript : MonoBehaviour
     private Transform target;
     private float currentHealth;
 
+    public SpriteRenderer spriteRenderer;
+    public Sprite hexagon;
+    public Sprite pentagon;
+    public Sprite square;
+    public Sprite triangle;
+
 
     private void Awake()
     {
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         target = playerObj != null ? playerObj.transform : null;
         currentHealth = maxHealth;
-        UpdateHealthDisplay();
+        UpdateHealth();
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -41,7 +49,7 @@ public class EnemyMoveScript : MonoBehaviour
     {
         currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0); // Prevent negative health
-        UpdateHealthDisplay();
+        UpdateHealth();
 
         if (currentHealth <= 0)
         {
@@ -49,12 +57,13 @@ public class EnemyMoveScript : MonoBehaviour
         }
     }
 
-    private void UpdateHealthDisplay()
+    private void UpdateHealth()
     {
         if (healthText != null)
         {
             healthText.text = $"Enemy Health: {currentHealth:F0}/{maxHealth:F0}";
         }
+        ChangeForm();
     }
 
     private void Die()
@@ -64,6 +73,25 @@ public class EnemyMoveScript : MonoBehaviour
 
     private void ChangeForm()
     {
-
+        if (currentHealth == 6)
+        {
+            spriteRenderer.sprite = hexagon;
+        }
+        if (currentHealth == 5)
+        {
+            spriteRenderer.sprite = pentagon;
+        }
+        if (currentHealth == 4)
+        {
+            spriteRenderer.sprite = square;
+        }
+        if (currentHealth == 3)
+        {
+            spriteRenderer.sprite = triangle;
+        }
+        else
+        {
+            //nothing
+        }
     }
 }
