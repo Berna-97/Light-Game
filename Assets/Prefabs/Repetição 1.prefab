@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3742003424010502492}
   m_Layer: 0
-  m_Name: "Repeti\xE7\xE3o"
+  m_Name: "Repeti\xE7\xE3o 1"
   m_TagString: Repetition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,13 +60,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255989495574489703}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9238797, z: -0, w: -0.38268316}
-  m_LocalPosition: {x: -0.3413865, y: -0.42199996, z: 0.2653094}
+  m_LocalRotation: {x: -0, y: 0.9914449, z: -0, w: -0.13052633}
+  m_LocalPosition: {x: -0.125, y: -0.42199996, z: 0.25}
   m_LocalScale: {x: 0.02579689, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3742003424010502492}
-  m_LocalEulerAnglesHint: {x: 0, y: 225, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 195, z: 0}
 --- !u!33 &2507302439063157156
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -171,13 +171,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5692987448415108602}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.38268322, z: -0, w: 0.9238797}
-  m_LocalPosition: {x: 0.37, y: -0.422, z: 0.2427882}
-  m_LocalScale: {x: 0.025796888, y: 1, z: 1.0637}
+  m_LocalRotation: {x: -0, y: -0.13052638, z: -0, w: 0.9914448}
+  m_LocalPosition: {x: 0.128, y: -0.422, z: 0.25}
+  m_LocalScale: {x: 0.025796888, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3742003424010502492}
-  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -15, z: 0}
 --- !u!33 &2566427314913297519
 MeshFilter:
   m_ObjectHideFlags: 0

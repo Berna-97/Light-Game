@@ -6,7 +6,6 @@ public class EnemyMoveScript : MonoBehaviour
 {
     public float speed = 1.0f;
     public float rotationSpeed = 40.0f;
-    public float damageRange = 2.0f;
     public float maxHealth = 4f;
     public TextMeshProUGUI healthText; // Reference to UI text element
 
@@ -16,26 +15,29 @@ public class EnemyMoveScript : MonoBehaviour
 
     private void Awake()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        target = playerObj != null ? playerObj.transform : null;
         currentHealth = maxHealth;
         UpdateHealthDisplay();
     }
 
     void Update()
     {
-        transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
+        //3d
+        //transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
 
+        //2d
+        transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+
+        if (target != null) { 
         var step = speed * Time.deltaTime;
         Vector3 destination = new(target.position.x, 0, target.position.z);
         transform.position = Vector3.MoveTowards(transform.position, destination, step);
-
-        if (Vector3.Distance(transform.position, target.position) < damageRange)
-        {
-            Destroy(this.gameObject);
         }
+
     }
 
-    public void TakeDamage(float damage)
+        public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0); // Prevent negative health

@@ -6,12 +6,14 @@ public class Repetition : MonoBehaviour
     public float speed = 10f;
     public float explodeDistance = 2.5f;
     public float damage = 1f;
+    
 
     private EnemyMoveScript enemyScript;
 
     public void SetTarget(GameObject newTarget)
     {
         target = newTarget;
+
 
         if (target != null)
         {
@@ -25,6 +27,7 @@ public class Repetition : MonoBehaviour
         {
             Destroy(gameObject); return;
         }
+
         
         transform.position = Vector3.MoveTowards(
             transform.position,

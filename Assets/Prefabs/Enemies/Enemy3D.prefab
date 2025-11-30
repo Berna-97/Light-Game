@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 8907841906062559027}
   - component: {fileID: 4547808080635746414}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy3D
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,7 +472,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8035087168446344692}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.6087605, w: 0.79335415}
+  m_LocalRotation: {x: -0.000000014901161, y: -0.000000074505806, z: -0.60876065, w: 0.793354}
   m_LocalPosition: {x: -9.54, y: 0.769, z: 2.61}
   m_LocalScale: {x: 1.28, y: 1.28, z: 1.28}
   m_ConstrainProportionsScale: 1
@@ -497,7 +497,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMoveScript
   speed: 1
   rotationSpeed: 40
-  damageRange: 2
   maxHealth: 4
   healthText: {fileID: 0}
 --- !u!114 &-7032267268767469191
@@ -560,5 +559,5 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 1

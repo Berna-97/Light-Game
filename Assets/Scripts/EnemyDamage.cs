@@ -7,31 +7,28 @@ public class EnemyDamage : MonoBehaviour
 {
     public HealthSystem healthSystem;
     public int damage = 1;
-
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-
-    }
+    private bool hasCollided = false;
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.CompareTag("Player"))
         {
+            if (hasCollided) return;
             HealthSystem healthSystem = other.gameObject.GetComponentInParent<HealthSystem>();
 
 
             if (healthSystem != null)
             {
                 healthSystem.TakeDamage(damage);
+                Destroy(this.gameObject);
             }
             else
             {
                 Debug.LogError("No HealthSystem found on Player or its parents!");
             }
+
+            hasCollided = true;
         }
     }
 }

@@ -74,11 +74,11 @@ public class RepLauncherHold : MonoBehaviour
             StartCoroutine(FireRockets());
         }
 
-        foreach (var rocket in activeRockets)
-        {
-            if (rocket != null)
-                rocket.SetTarget(targetSystem.Target);
-        }
+        //foreach (var rocket in activeRockets)
+        //{
+        //    if (rocket != null)
+        //        rocket.SetTarget(targetSystem.Target);
+        //}
         activeRockets.RemoveAll(r => r == null);
     }
 

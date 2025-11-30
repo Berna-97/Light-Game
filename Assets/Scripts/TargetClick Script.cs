@@ -73,6 +73,7 @@ public class TargetClickScript : MonoBehaviour
         GameObject closest = null;
         float closestDistance = 9999f;
 
+        if( player!= null ) { 
         //Por cada inimigo presente vamos buscar o mais próximo do player
         foreach (GameObject go in enemies)
         {
@@ -84,5 +85,7 @@ public class TargetClickScript : MonoBehaviour
             }
         }
         return closest;
+        }
+        else { return null; }
     }
 }
