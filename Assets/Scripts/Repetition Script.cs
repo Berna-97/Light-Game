@@ -31,7 +31,7 @@ public class Repetition : MonoBehaviour
         
         transform.position = Vector3.MoveTowards(
             transform.position,
-            new Vector3(target.transform.position.x, 0, target.transform.position.z),
+            target.transform.position,
             speed * Time.deltaTime
         );
 

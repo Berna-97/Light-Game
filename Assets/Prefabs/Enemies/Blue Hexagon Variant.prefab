@@ -10,20 +10,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1672596150020406690, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
       propertyPath: m_Size.x
-      value: 1.6566666
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1672596150020406690, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
       propertyPath: m_Size.y
-      value: 1.4566667
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1672596150020406690, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1588273648, guid: 17ad3820cdef55a48b90ce2c8c3fa689, type: 3}
+      objectReference: {fileID: 21300000, guid: 17ad3820cdef55a48b90ce2c8c3fa689, type: 3}
     - target: {fileID: 1672596150020406690, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1672596150020406690, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e34023af9d8b57644a0d24b2c8a7e0bd, type: 2}
     - target: {fileID: 2871951322944712597, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.10416
@@ -68,6 +72,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Hexagon Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5461920985321566095, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+      propertyPath: square
+      value: 
+      objectReference: {fileID: 21300000, guid: fe6df0e2201f4764d9d901e5f2c70e6c, type: 3}
+    - target: {fileID: 5461920985321566095, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+      propertyPath: hexagon
+      value: 
+      objectReference: {fileID: 21300000, guid: 17ad3820cdef55a48b90ce2c8c3fa689, type: 3}
+    - target: {fileID: 5461920985321566095, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+      propertyPath: pentagon
+      value: 
+      objectReference: {fileID: 21300000, guid: 0926cf1a5654f754fa2bc31b935c79fe, type: 3}
+    - target: {fileID: 5461920985321566095, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+      propertyPath: triangle
+      value: 
+      objectReference: {fileID: 21300000, guid: d35551718fb9b9640a51ade12d6bb922, type: 3}
     - target: {fileID: 5461920985321566095, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
       propertyPath: maxHealth
       value: 6
