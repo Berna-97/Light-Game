@@ -1,33 +1,46 @@
-using UnityEngine;
 using System.Collections.Generic;
+using Unity.Cinemachine;
+using UnityEngine;
 
 public class MultiCameraSwitcher : MonoBehaviour
 {
-    public List<Camera> cameras;
+    [Header("Assign your two cameras")]
+    public CinemachineCamera cameraTarget;
+    public CinemachineCamera cameraMoving;
 
+    [Header("Set the priorities")]
     public int activePriority = 5;
-    public int inactivePriority = 0;
-
-    public int activeCameraIndex = 0;
-
-    public void SwitchToCamera(int index)
-    {
-        if (cameras == null || cameras.Count == 0)
-            return;
-
-        if (index < 0 || index >= cameras.Count)
-            index = 0;
-
-        for (int i = 0; i < cameras.Count; i++)
-        {
-            cameras[i].enabled = (i == index);
-        }
-    }
+    public int inactivePriority = 1;
+    public bool target = false;
 
     void Start()
     {
-        // ensure the configured active camera is enabled at startup
-        SwitchToCamera(activeCameraIndex);
+        SwitchToCameraMoving();
     }
 
+    public void Update()
+    {
+        // Example logic to switch cameras based on some condition
+        if (target == true)
+        {
+            SwitchToCameraTarget();
+        }
+        else 
+        {
+            SwitchToCameraMoving();
+        }
+    }
+
+    public void SwitchToCameraTarget()
+    {
+        cameraTarget.Priority = activePriority;
+        cameraMoving.Priority = inactivePriority;
+    }
+
+    public void SwitchToCameraMoving()
+    {
+        cameraMoving.Priority = activePriority;
+        cameraTarget.Priority = inactivePriority;
+    }
 }
+

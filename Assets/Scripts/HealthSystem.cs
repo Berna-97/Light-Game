@@ -5,6 +5,7 @@ using System;
 
 public class HealthSystem : MonoBehaviour
 {
+    public DeathScreen deathScreen;
     public int health;
     public int maxHealth = 5;
     public int minHealth = 0;
@@ -23,6 +24,7 @@ public class HealthSystem : MonoBehaviour
         if (health <= minHealth)
         {
             Destroy(this.gameObject);
+            deathScreen.ShowDeathScreen();
         }
     }
 }
