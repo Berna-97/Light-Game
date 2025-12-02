@@ -19,6 +19,7 @@ public class Repetition : MonoBehaviour
         {
             enemyScript = target.GetComponent<EnemyMoveScript>();
         }
+
     }
 
     void Update()

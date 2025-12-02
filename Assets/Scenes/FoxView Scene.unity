@@ -154,9 +154,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d35551718fb9b9640a51ade12d6bb922, type: 3}
     - target: {fileID: -2312816634450913220, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2312816634450913220, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 7222763}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 1074760417}
     - target: {fileID: 490109464103668169, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.048729
@@ -554,6 +562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3115433788120932386, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5461920985321566095, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
       propertyPath: healthText
       value: 
@@ -601,6 +613,7 @@ MonoBehaviour:
   pentagon: {fileID: 0}
   square: {fileID: 0}
   triangle: {fileID: 0}
+  gate: {fileID: 0}
 --- !u!4 &536477189
 Transform:
   m_ObjectHideFlags: 0
@@ -1520,6 +1533,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1074760417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1733215823564167114, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
+  m_PrefabInstance: {fileID: 4133451512039692561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1074760419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074760417}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee31c234422db2344a49f14fc85e948e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GateScript
+  isLeftGate: 0
+  openess: 100
 --- !u!1 &1125602112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,7 +1591,7 @@ MonoBehaviour:
   timeBetweenShots: 0.2
   maxEnergy: 100
   currentEnergy: 100
-  energyRechargeRate: 10
+  energyRechargeRate: 10000
   energyCostPerRocket: 20
   energyCounter: {fileID: 813960183}
 --- !u!114 &1125602114
@@ -1592,6 +1624,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1224259190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5592779989126603836, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
+  m_PrefabInstance: {fileID: 4133451512039692561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1224259192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224259190}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee31c234422db2344a49f14fc85e948e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GateScript
+  isLeftGate: 1
+  openess: 100
 --- !u!1 &1319547090
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,6 +3068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a366a990f3c4a1045ab625b56043d07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
+  deathScreen: {fileID: 0}
   health: 0
   maxHealth: 5
   minHealth: 0
@@ -3130,11 +3182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3149681241686903760, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -63.95127
+      value: -16.4
       objectReference: {fileID: 0}
     - target: {fileID: 3149681241686903760, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.52536
+      value: 4.49
       objectReference: {fileID: 0}
     - target: {fileID: 3149681241686903760, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3171,6 +3223,30 @@ PrefabInstance:
     - target: {fileID: 3965701056229638752, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
       propertyPath: m_Name
       value: Gate
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013484855935425972, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013484855935425972, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000029802319
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013484855935425972, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111436255134794734, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000029653306
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111436255134794734, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111436255134794734, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 5542913573337387410, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
       propertyPath: m_Size.x
@@ -3209,7 +3285,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7808697180160994790, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
       insertIndex: 6
       addedObject: {fileID: 2071088729}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5592779989126603836, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1224259192}
+    - targetCorrespondingSourceObject: {fileID: 1733215823564167114, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1074760419}
   m_SourcePrefab: {fileID: 100100000, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
 --- !u!1001 &5082571747634156103
 PrefabInstance:
@@ -3302,6 +3384,10 @@ PrefabInstance:
     - target: {fileID: 3115433788120932386, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3115433788120932386, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5461920985321566095, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
       propertyPath: healthText
@@ -3426,6 +3512,14 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1672596150012008615}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: gate
+      value: 
+      objectReference: {fileID: 1224259190}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: isLeftGate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 490109464103668169, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.048729
@@ -3464,6 +3558,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 490109464103668169, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941183106854627577, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7899751868700559882, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}

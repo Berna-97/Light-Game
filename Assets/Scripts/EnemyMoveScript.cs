@@ -2,6 +2,7 @@
 using TMPro;
 using NUnit.Framework; // Add this for TextMeshPro support
 using NUnit.Framework.Internal;
+using System.Collections;
 
 public class EnemyMoveScript : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class EnemyMoveScript : MonoBehaviour
     public Sprite square;
     public Sprite triangle;
 
+    private bool isGate;
+    public GameObject gate;
+
+
 
     private void Awake()
     {
@@ -27,6 +32,16 @@ public class EnemyMoveScript : MonoBehaviour
         currentHealth = maxHealth;
         UpdateHealth();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        if (this.GetComponent<EnemyDamage>() == null )
+        {
+            isGate = true;
+            
+        }
+        else
+        {
+            isGate = false;
+        }
     }
 
     void Update()
@@ -37,7 +52,7 @@ public class EnemyMoveScript : MonoBehaviour
         //2d
         transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
-        if (target != null) { 
+        if (target != null && !isGate) { 
         var step = speed * Time.deltaTime;
         Vector3 destination = new(target.position.x, 0, target.position.z);
         transform.position = Vector3.MoveTowards(transform.position, destination, step);
@@ -51,6 +66,9 @@ public class EnemyMoveScript : MonoBehaviour
         currentHealth = Mathf.Max(currentHealth, 0); // Prevent negative health
         UpdateHealth();
 
+        if (isGate) { StartCoroutine("HealthTimer"); }
+       
+
         if (currentHealth <= 0)
         {
             Die();
@@ -63,11 +81,21 @@ public class EnemyMoveScript : MonoBehaviour
         {
             healthText.text = $"Enemy Health: {currentHealth:F0}/{maxHealth:F0}";
         }
-        ChangeForm();
+        if (!isGate)
+        {
+            ChangeForm();
+        }
+        
     }
 
     private void Die()
     {
+        if (gate !=null) { 
+            if (gate.GetComponent<GateScript>() != null)
+            {
+                gate.GetComponent<GateScript>().enabled = true;
+            }
+        }
         Destroy(this.gameObject);
     }
 
@@ -94,4 +122,12 @@ public class EnemyMoveScript : MonoBehaviour
             //nothing
         }
     }
+
+    IEnumerator HealthTimer()
+    {
+        yield return new WaitForSeconds(0.7f);
+        currentHealth = maxHealth;
+    }
+    
+
 }

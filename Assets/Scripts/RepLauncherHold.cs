@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RepLauncherHold : MonoBehaviour
@@ -16,8 +17,9 @@ public class RepLauncherHold : MonoBehaviour
     public float spawnRate = 0.3f;
     public float timeBetweenShots = 0.2f;
     private TargetClickScript targetSystem;
-    private List<Repetition> activeRockets = new List<Repetition>();
-    
+    private List<GameObject> activeRockets = new List<GameObject>();
+    private bool isFiring = false;
+
 
     // Energy system
     public float maxEnergy = 100f;
@@ -46,6 +48,9 @@ public class RepLauncherHold : MonoBehaviour
 
         UpdateEnergyDisplay();
 
+        if (isFiring)
+            return;
+
         if (Input.GetMouseButton(0))
         {
             if (rocketPrefab == null || spawnPosition == null) return;
@@ -56,7 +61,14 @@ public class RepLauncherHold : MonoBehaviour
             if (timer > spawnRate)
             {
                 hasHeld = true;
-                GameObject rocketObj = Instantiate(rocketPrefab, spawnPosition.transform.position + new Vector3(initialSpacing, 0, 0), Quaternion.Euler(0, -90, 0));
+                GameObject rocketObj = Instantiate(
+                    rocketPrefab,
+                    spawnPosition.transform.position + new Vector3(initialSpacing, 0, 0),
+                    Quaternion.Euler(0, -90, 0)
+                );
+
+                activeRockets.Add(rocketObj);
+
                 initialSpacing -= spacing;
                 timer = 0;
 
@@ -84,19 +96,28 @@ public class RepLauncherHold : MonoBehaviour
 
     IEnumerator FireRockets()
     {
-        GameObject[] rep = GameObject.FindGameObjectsWithTag("Repetition");
-        foreach (GameObject go in rep)
-        {
-            Repetition rocket = go.AddComponent<Repetition>();
-            rocket.SetTarget(targetSystem.Target);
+        isFiring = true;
+        GameObject currentTarget = targetSystem.Target;
 
-            activeRockets.Add(rocket);
-            yield return new WaitForSeconds(timeBetweenShots);
+        List<GameObject> rocketsToFire = new List<GameObject>(activeRockets);
+
+        foreach (var rocketObj in rocketsToFire)
+        {
+            if (rocketObj != null)
+            {
+                Repetition rocket = rocketObj.AddComponent<Repetition>();
+                rocket.SetTarget(currentTarget);
+
+                yield return new WaitForSeconds(timeBetweenShots);
+            }
         }
 
-        rocketsQueued = 0;
-        yield return null;
+        activeRockets.Clear();
+
+        isFiring = false; // agora podes carregar mais rockets
     }
+
+
 
     private void UpdateEnergyDisplay()
     {
