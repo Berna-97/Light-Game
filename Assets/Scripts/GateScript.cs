@@ -5,7 +5,7 @@ public class GateScript : MonoBehaviour
 {
     public bool isLeftGate;
     private bool isGateOpen = false;
-    public int openess = 120;
+    public int openess = 100;
     private int currentOpeness;
 
     // Update is called once per frame
