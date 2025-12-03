@@ -5,12 +5,15 @@ using System;
 
 public class HealthSystem : MonoBehaviour
 {
-    public DeathScreen deathScreen;
+    public GameOverScreen deathScreen;
     public int health;
     public int maxHealth = 5;
     public int minHealth = 0;
     public int damage = 1;
 
+    public void GameOver() {    
+        deathScreen.Setup();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -24,7 +27,7 @@ public class HealthSystem : MonoBehaviour
         if (health <= minHealth)
         {
             Destroy(this.gameObject);
-            deathScreen.ShowDeathScreen();
+            GameOver();
         }
     }
 }
