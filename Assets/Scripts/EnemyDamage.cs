@@ -1,13 +1,20 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering;
 
 
 public class EnemyDamage : MonoBehaviour
 {
-    public HealthSystem healthSystem;
+    private HealthSystem healthSystem;
     public int damage = 1;
     private bool hasCollided = false;
+
+    public void Start()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        healthSystem = player.GetComponent<HealthSystem>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {

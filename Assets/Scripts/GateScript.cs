@@ -5,7 +5,7 @@ public class GateScript : MonoBehaviour
 {
     public bool isLeftGate;
     private bool isGateOpen = false;
-    public int openess = 100;
+    public int openess = 20;
     private int currentOpeness;
 
     // Update is called once per frame
@@ -15,11 +15,11 @@ public class GateScript : MonoBehaviour
         {
             if (isLeftGate)
             {
-                transform.Rotate(0, -1f, 0);
+                transform.Rotate(0, -5f, 0);
             }
             else
             {
-                transform.Rotate(0, 1f, 0);
+                transform.Rotate(0, 5f, 0);
             }
 
             currentOpeness++;

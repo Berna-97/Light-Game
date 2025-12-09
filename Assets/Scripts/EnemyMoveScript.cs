@@ -21,6 +21,7 @@ public class EnemyMoveScript : MonoBehaviour
     public Sprite triangle;
 
     private bool isGate;
+    public bool isSingleButton;
     public GameObject gate;
 
 
@@ -29,8 +30,7 @@ public class EnemyMoveScript : MonoBehaviour
     {
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         target = playerObj != null ? playerObj.transform : null;
-        currentHealth = maxHealth;
-        UpdateHealth();
+
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
         if (this.GetComponent<EnemyDamage>() == null )
@@ -42,6 +42,12 @@ public class EnemyMoveScript : MonoBehaviour
         {
             isGate = false;
         }
+    }
+
+    private void Start()
+    {
+        SetHealthToMax();
+        UpdateHealth();
     }
 
     void Update()
@@ -95,6 +101,15 @@ public class EnemyMoveScript : MonoBehaviour
             {
                 gate.GetComponent<GateScript>().enabled = true;
             }
+            if (isSingleButton)
+            {
+                Transform gate2 = transform.parent.Find("Walls/Gate2");
+                Debug.Log(gate2);
+                if (gate2.GetComponent<GateScript>() != null)
+                {
+                    gate2.GetComponent<GateScript>().enabled = true;
+                }
+            }
         }
         Destroy(this.gameObject);
     }
@@ -129,5 +144,10 @@ public class EnemyMoveScript : MonoBehaviour
         currentHealth = maxHealth;
     }
     
+    public void SetHealthToMax()
+    {
+        currentHealth = maxHealth;
+        ChangeForm();
+    }
 
 }

@@ -11,7 +11,7 @@ public class GroundMoverScript : MonoBehaviour
     {
         transform.Translate(groundSpeed * Time.deltaTime, 0, 0);
 
-        Destroy(gameObject, groundSpeed * Time.deltaTime * 30);
+        Destroy(gameObject, groundSpeed * Time.deltaTime * 100);
 
     }
 }
