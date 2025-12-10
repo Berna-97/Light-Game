@@ -10,6 +10,10 @@ public class TargetClickScript : MonoBehaviour
     public GameObject Target { get; private set; } 
     public float targetSpeed = 50f;
 
+    private float clickStartTime;
+    private bool isHold;
+    public float holdThreshold = 0.15f; // 150ms
+
     void Awake()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -24,10 +28,23 @@ public class TargetClickScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
-            Target = SwitchTarget();
+            clickStartTime = Time.time;
+            isHold = false;
         }
+
+        if (Input.GetMouseButton(0))
+        {
+            if (Time.time - clickStartTime > holdThreshold)
+                isHold = true;
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (!isHold)
+                Target = SwitchTarget();
+        }
+
 
 
         if (Target != null)

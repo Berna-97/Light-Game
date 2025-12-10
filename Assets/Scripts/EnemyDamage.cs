@@ -6,15 +6,8 @@ using UnityEngine.Rendering;
 
 public class EnemyDamage : MonoBehaviour
 {
-    private HealthSystem healthSystem;
     public int damage = 1;
     private bool hasCollided = false;
-
-    public void Start()
-    {
-        GameObject player = GameObject.FindWithTag("Player");
-        healthSystem = player.GetComponent<HealthSystem>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {

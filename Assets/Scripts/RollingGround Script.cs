@@ -9,6 +9,7 @@ public class RollingGroundScript : MonoBehaviour
     public GameObject ground;
     public GameObject gate1;
     public GameObject gate2;
+    public GameObject youWin;
 
     public int totalGroundCount;
     public int groundCount;
@@ -25,14 +26,14 @@ public class RollingGroundScript : MonoBehaviour
         buttonNum = new int[5];
         buttonHp = new int[5];
 
-        groundBefore[0] = 1; buttonNum[0] = 1; buttonHp[0] = 3;
-        groundBefore[1] = 2; buttonNum[1] = 1; buttonHp[1] = 4;
-        groundBefore[2] = 3; buttonNum[2] = 1; buttonHp[2] = 5;
-        groundBefore[3] = 4; buttonNum[3] = 1; buttonHp[3] = 6;
+        groundBefore[0] = 4; buttonNum[0] = 1; buttonHp[0] = 3;
+        groundBefore[1] = 7; buttonNum[1] = 1; buttonHp[1] = 4;
+        groundBefore[2] = 11; buttonNum[2] = 1; buttonHp[2] = 5;
+        groundBefore[3] = 1; buttonNum[3] = 2; buttonHp[3] = 3;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Trigger") && groundCount < totalGroundCount)
+        if (other.CompareTag("Trigger") && groundCount <= totalGroundCount)
         {
             bool spawned = false;
 
@@ -50,10 +51,15 @@ public class RollingGroundScript : MonoBehaviour
             {
                 Instantiate(ground);
             }
-
-            groundCount++; // incrementa apenas uma vez, após processar este trigger
         }
+        if (other.CompareTag("Trigger") && groundCount == totalGroundCount)
+            {
+                youWin.SetActive(true);           
+            }
+
+        groundCount++; 
     }
+
 
     private void SpawnGate(int buttonsNum, int buttonsHp)
     {
@@ -79,11 +85,16 @@ public class RollingGroundScript : MonoBehaviour
                 GameObject gateTwo = Instantiate(gate2);
 
                 Transform blueSquare2 = gateTwo.transform.Find("Gate/Blue Square");
+                Transform blueSquare3 = gateTwo.transform.Find("Gate/Blue Square2");
 
                 EnemyMoveScript script2 = blueSquare2.GetComponent<EnemyMoveScript>();
+                EnemyMoveScript script3 = blueSquare3.GetComponent<EnemyMoveScript>();
 
                 script2.maxHealth = buttonsHp;
                 script2.SetHealthToMax();
+
+                script3.maxHealth = buttonsHp;
+                script3.SetHealthToMax();
 
                 break;
 

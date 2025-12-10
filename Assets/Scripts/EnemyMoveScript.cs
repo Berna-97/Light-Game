@@ -25,7 +25,6 @@ public class EnemyMoveScript : MonoBehaviour
     public GameObject gate;
 
 
-
     private void Awake()
     {
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -33,7 +32,7 @@ public class EnemyMoveScript : MonoBehaviour
 
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
-        if (this.GetComponent<EnemyDamage>() == null )
+        if (speed == 0)
         {
             isGate = true;
             
@@ -97,7 +96,7 @@ public class EnemyMoveScript : MonoBehaviour
     private void Die()
     {
         if (gate !=null) { 
-            if (gate.GetComponent<GateScript>() != null)
+            if (speed == 0)
             {
                 gate.GetComponent<GateScript>().enabled = true;
             }
