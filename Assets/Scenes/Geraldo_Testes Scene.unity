@@ -626,6 +626,7 @@ MonoBehaviour:
   pentagon: {fileID: 0}
   square: {fileID: 0}
   triangle: {fileID: 0}
+  isSingleButton: 0
   gate: {fileID: 0}
 --- !u!4 &536477189
 Transform:
@@ -1383,6 +1384,7 @@ MonoBehaviour:
   pentagon: {fileID: 0}
   square: {fileID: 0}
   triangle: {fileID: 0}
+  isSingleButton: 0
   gate: {fileID: 0}
 --- !u!4 &723920835
 Transform:
@@ -1415,7 +1417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac51d80f778d2c4fada3b4d80e6eeb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
-  healthSystem: {fileID: 0}
   damage: 1
 --- !u!65 &723920837
 BoxCollider:
@@ -1470,6 +1471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetClickScript
   targetSpeed: 50
+  holdThreshold: 0.15
 --- !u!114 &767821393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2192,6 +2194,7 @@ MonoBehaviour:
   pentagon: {fileID: 0}
   square: {fileID: 0}
   triangle: {fileID: 0}
+  isSingleButton: 0
   gate: {fileID: 0}
 --- !u!4 &1166777481
 Transform:
@@ -2224,7 +2227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac51d80f778d2c4fada3b4d80e6eeb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
-  healthSystem: {fileID: 0}
   damage: 1
 --- !u!65 &1166777483
 BoxCollider:
@@ -4047,6 +4049,7 @@ MonoBehaviour:
   pentagon: {fileID: 0}
   square: {fileID: 0}
   triangle: {fileID: 0}
+  isSingleButton: 0
   gate: {fileID: 0}
 --- !u!4 &1495353609
 Transform:
@@ -4079,7 +4082,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac51d80f778d2c4fada3b4d80e6eeb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
-  healthSystem: {fileID: 0}
   damage: 1
 --- !u!65 &1495353611
 BoxCollider:
@@ -4656,6 +4658,7 @@ MonoBehaviour:
   pentagon: {fileID: 0}
   square: {fileID: 0}
   triangle: {fileID: 0}
+  isSingleButton: 0
   gate: {fileID: 0}
 --- !u!4 &1818811661
 Transform:
@@ -4688,7 +4691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac51d80f778d2c4fada3b4d80e6eeb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
-  healthSystem: {fileID: 0}
   damage: 1
 --- !u!65 &1818811663
 BoxCollider:
@@ -5234,7 +5236,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d695c2afe06fda842a6bfa200da99bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RollingGroundScript
-  PathSection: {fileID: 3742276861196612738, guid: fd939dd3420d2714485cb890841af0cb, type: 3}
+  ground: {fileID: 3742276861196612738, guid: b5ec56e014881bf4496c2ca570efedde, type: 3}
+  gate1: {fileID: 8084721789744926381, guid: 1fc621feef4715540ae48e9cd7f0a0bb, type: 3}
+  gate2: {fileID: 8084721789744926381, guid: b5a8040926642cd45b2c76764bde7f3d, type: 3}
+  youWin: {fileID: 0}
+  totalGroundCount: 0
+  groundCount: 0
 --- !u!65 &2123087062
 BoxCollider:
   m_ObjectHideFlags: 0
