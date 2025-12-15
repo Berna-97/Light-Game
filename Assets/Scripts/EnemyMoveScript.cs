@@ -19,6 +19,8 @@ public class EnemyMoveScript : MonoBehaviour
     public Sprite pentagon;
     public Sprite square;
     public Sprite triangle;
+    public Sprite twoangle;
+    public Sprite line;
 
     private bool isGate;
     public bool isSingleButton;
@@ -130,6 +132,14 @@ public class EnemyMoveScript : MonoBehaviour
         if (currentHealth == 3)
         {
             spriteRenderer.sprite = triangle;
+        }
+        if (currentHealth == 2)
+        {
+            spriteRenderer.sprite = twoangle;
+        }
+        if (currentHealth == 1)
+        {
+            spriteRenderer.sprite = line;
         }
         else
         {

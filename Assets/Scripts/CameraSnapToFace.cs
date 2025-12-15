@@ -8,7 +8,7 @@ public class CameraSnapToFace : MonoBehaviour
     public GameObject level1;
     public GameObject level2;
     public GameObject level3;
-    public GameObject level4; // TOPO
+    public GameObject level4;
     public GameObject title;
 
     private GameObject currentUI;
@@ -18,8 +18,8 @@ public class CameraSnapToFace : MonoBehaviour
 
     private readonly float[] faces = { 0f, 120f, 240f };
 
-    private int currentLevel = 1;   // 1–4
-    private int currentFace = 0;    // 0–2 (apenas laterais)
+    private int currentLevel = 1;   
+    private int currentFace = 0;    
 
     private bool snappingX;
     private bool snappingY;
@@ -33,18 +33,17 @@ public class CameraSnapToFace : MonoBehaviour
 
     void Update()
     {
-        // AUTO ROTATE
+ 
         if (!snappingY)
         {
-            // Nos níveis laterais: normal
+      
             if (currentLevel != 4)
             {
                 follow.HorizontalAxis.Value += autoRotateSpeed * Time.deltaTime;
             }
             else
             {
-                Debug.Log(follow.HorizontalAxis.Value);
-                // No topo: roda mais devagar (opcional)
+              
                 follow.HorizontalAxis.Value -= 15 * Time.deltaTime;
             }
 
@@ -52,7 +51,7 @@ public class CameraSnapToFace : MonoBehaviour
         }
 
 
-        // Snap horizontal (faces laterais)
+
         if (snappingX)
         {
             float target = faces[currentFace];
@@ -70,7 +69,7 @@ public class CameraSnapToFace : MonoBehaviour
             }
         }
 
-        // Snap vertical (topo)
+
         if (snappingY)
         {
             float targetY = currentLevel == 4 ? 60f : 0f;
@@ -101,7 +100,6 @@ public class CameraSnapToFace : MonoBehaviour
         }
     }
 
-    // ---------- INPUT ----------
 
     public void RotateRight()
     {
@@ -151,7 +149,6 @@ public class CameraSnapToFace : MonoBehaviour
         ShowLevelScreen(currentLevel);
     }
 
-    // ---------- NAVEGAÇÃO ----------
 
     private void GoToLevel(int level)
     {
@@ -175,6 +172,7 @@ public class CameraSnapToFace : MonoBehaviour
 
     public void GoToLevelOne()
     {
+        autoRotateSpeed = 0f;
         GoToLevel(1);
         title.SetActive(false);
     }
@@ -196,7 +194,6 @@ public class CameraSnapToFace : MonoBehaviour
         return closest;
     }
 
-    // ---------- UI ----------
 
     private void ShowLevelScreen(int level)
     {
