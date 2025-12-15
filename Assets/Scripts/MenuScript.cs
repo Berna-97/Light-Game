@@ -6,10 +6,13 @@ public class MenuScript : MonoBehaviour
 {
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject optionCanvas;
+    [SerializeField] private GameObject cam;
+    private CameraSnapToFace snap;
 
     private void Start()
     {
         optionCanvas.SetActive(false);
+        snap = cam.GetComponent<CameraSnapToFace>();
     }
     public void Play()
     {
@@ -29,5 +32,14 @@ public class MenuScript : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+    public void RotateRight()
+    {
+        snap.RotateRight();
+    }
+
+    public void RotateLeft()
+    {
+        snap.RotateLeft();
     }
 }

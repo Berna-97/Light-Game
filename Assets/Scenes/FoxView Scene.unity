@@ -1317,6 +1317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WinScript
   spawner: {fileID: 761462136}
   player: {fileID: 2123087060}
+  target: {fileID: 767821391}
   acceleration: 0.04
   velocity: 0
 --- !u!114 &1433125221
@@ -1341,8 +1342,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You Win!!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 642dabeb835e0fd4782bb74fa02fbbe8, type: 2}
+  m_sharedMaterial: {fileID: 6911334616979102856, guid: 642dabeb835e0fd4782bb74fa02fbbe8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

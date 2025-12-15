@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinScript : MonoBehaviour
 {
     public GameObject spawner;
     public GameObject player;
+    public GameObject target;
     public float acceleration;
     public float velocity;
     private float timer;
@@ -17,6 +19,7 @@ public class WinScript : MonoBehaviour
         velocity = 0f;
         HealthSystem healthSystem = player.GetComponent<HealthSystem>();
         healthSystem.health = 9999;
+        target.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,6 +27,7 @@ public class WinScript : MonoBehaviour
     {
         if (timer < 5)
         {
+
             timer += Time.deltaTime;
             velocity += acceleration * Time.deltaTime;
             player.transform.position = player.transform.position + new Vector3(velocity, 0, 0);
@@ -32,6 +36,7 @@ public class WinScript : MonoBehaviour
         else
         {
             Destroy(player);
+            SceneManager.LoadScene("Main Menu Scene");
         }
 
 
