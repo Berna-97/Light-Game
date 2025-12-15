@@ -64,8 +64,10 @@
     <Compile Include="Assets\Scripts\RepLauncherHold.cs" />
     <Compile Include="Assets\Scripts\EnemyMoveScript.cs" />
     <Compile Include="Assets\Scripts\HealthSystem.cs" />
+    <Compile Include="Assets\Scripts\Repetition Script1.cs" />
     <Compile Include="Assets\Scripts\RepLauncherClick.cs" />
     <Compile Include="Assets\Scripts\TargetClosest Script.cs" />
+    <Compile Include="Assets\Scripts\GunslingerShooter.cs" />
     <Compile Include="Assets\Scripts\SettingsMenuManager.cs" />
     <Compile Include="Assets\Scripts\EnemySpawnScript.cs" />
     <Compile Include="Assets\Scripts\CameraChangeLogic.cs" />
@@ -73,6 +75,8 @@
     <Compile Include="Assets\Scripts\GateScript.cs" />
     <Compile Include="Assets\Scripts\Opacity.cs" />
     <Compile Include="Assets\Scripts\TargetClick Script.cs" />
+    <Compile Include="Assets\Scripts\DeflectSystem.cs" />
+    <Compile Include="Assets\Scripts\EnemyProjectile.cs" />
     <Compile Include="Assets\Scripts\GroundMover Script.cs" />
     <Compile Include="Assets\Scripts\TargetHold Script.cs" />
     <Compile Include="Assets\Scripts\EnemyDamage.cs" />
@@ -81,6 +85,7 @@
     <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Scripts\RollingGround Script.cs" />
     <Compile Include="Assets\Scripts\GameOverScreen.cs" />
+    <Compile Include="Assets\Scripts\DeflectZone.cs" />
     <Compile Include="Assets\Scripts\Repetition Script.cs" />
   </ItemGroup>
   <ItemGroup>

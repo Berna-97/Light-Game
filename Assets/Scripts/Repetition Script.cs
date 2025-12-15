@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Repetition : MonoBehaviour
+public class EnemyProjectileLogic : MonoBehaviour
 {
     public GameObject target;
     public float speed = 10f;
@@ -8,7 +8,7 @@ public class Repetition : MonoBehaviour
     public float damage = 1f;
     
 
-    private EnemyMoveScript enemyScript;
+    private Opacity player;
 
     public void SetTarget(GameObject newTarget)
     {
@@ -17,7 +17,7 @@ public class Repetition : MonoBehaviour
 
         if (target != null)
         {
-            enemyScript = target.GetComponent<EnemyMoveScript>();
+            player = target.GetComponent<Opacity>();
         }
 
     }
@@ -29,26 +29,9 @@ public class Repetition : MonoBehaviour
             Destroy(gameObject); return;
         }
 
-        
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            target.transform.position,
-            speed * Time.deltaTime
-        );
-
         // Faz o rocket olhar para o alvo
         transform.LookAt(target.transform);
 
-        // Destroi ao chegar perto
-        if (Vector3.Distance(transform.position, target.transform.position) < explodeDistance)
-        {
-            if (enemyScript != null)
-            {
-                enemyScript.TakeDamage(damage);
-            }
-
-            Destroy(gameObject);
-        }
     }
 }
 
