@@ -13,6 +13,9 @@ public class MultiCameraSwitcher : MonoBehaviour
     public int inactivePriority = 1;
     public bool target = false;
 
+    private GameObject[] enemies;
+    private GameObject[] player;
+
     void Start()
     {
         SwitchToCameraMoving();
@@ -21,13 +24,16 @@ public class MultiCameraSwitcher : MonoBehaviour
     public void Update()
     {
         // Example logic to switch cameras based on some condition
-        if (target == true)
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        player = GameObject.FindGameObjectsWithTag("Player");
+       
+        if (enemies.Length == 0 && player != null)
         {
-            SwitchToCameraTarget();
+            SwitchToCameraMoving();
         }
         else 
         {
-            SwitchToCameraMoving();
+            SwitchToCameraTarget();
         }
     }
 
