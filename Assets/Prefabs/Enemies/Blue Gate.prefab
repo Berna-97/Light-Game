@@ -185,5 +185,7 @@ MonoBehaviour:
   pentagon: {fileID: 21300000, guid: 0926cf1a5654f754fa2bc31b935c79fe, type: 3}
   square: {fileID: 21300000, guid: fe6df0e2201f4764d9d901e5f2c70e6c, type: 3}
   triangle: {fileID: 21300000, guid: d35551718fb9b9640a51ade12d6bb922, type: 3}
+  twoangle: {fileID: 21300000, guid: 9f26e985c366d554297a71ecbfc0d814, type: 3}
+  line: {fileID: 21300000, guid: c07bf8ef885efd041959696febe58708, type: 3}
   isSingleButton: 0
   gate: {fileID: 0}

@@ -4994,11 +4994,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4576613018361298489, guid: 8ae2c4f916c63994a9d84aa25591535b, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: b00d725284d38c04aba4fb1ea998531e, type: 3}
-  m_PlayOnAwake: 0
+  m_Resource: {fileID: 8300000, guid: 91fbd0899117dd144a9eb68e4ed581bf, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6607,7 +6607,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1444366480}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: RotateRight
+        m_MethodName: Options
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7234,11 +7234,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cdb624f6fa77d74b8a4c0dc8e0b9b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsMenuManager
-  graphicsDropdown: {fileID: 887186832}
   masterVol: {fileID: 1003167519}
   musicVol: {fileID: 1370424795}
   sfxVol: {fileID: 2134634882}
   mainAudioMixer: {fileID: 24100000, guid: 8ae2c4f916c63994a9d84aa25591535b, type: 2}
+  qualityDropdown: {fileID: 887186832}
+  audioSource: {fileID: 1069939188}
+  clip: {fileID: 8300000, guid: 91fbd0899117dd144a9eb68e4ed581bf, type: 3}
 --- !u!4 &1703216091
 Transform:
   m_ObjectHideFlags: 0
@@ -8195,7 +8197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1941138701
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8260,13 +8262,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1069939188}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
+      - m_Target: {fileID: 1703216090}
+        m_TargetAssemblyTypeName: SettingsMenuManager, Assembly-CSharp
+        m_MethodName: TogglePlay
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: b00d725284d38c04aba4fb1ea998531e, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

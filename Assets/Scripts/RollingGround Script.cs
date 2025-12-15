@@ -26,10 +26,10 @@ public class RollingGroundScript : MonoBehaviour
         buttonNum = new int[5];
         buttonHp = new int[5];
 
-        groundBefore[0] = 4; buttonNum[0] = 1; buttonHp[0] = 3;
+        groundBefore[0] = 3; buttonNum[0] = 2; buttonHp[0] = 3;
         groundBefore[1] = 7; buttonNum[1] = 1; buttonHp[1] = 4;
         groundBefore[2] = 11; buttonNum[2] = 1; buttonHp[2] = 5;
-        groundBefore[3] = 1; buttonNum[3] = 2; buttonHp[3] = 3;
+        groundBefore[3] = 1; buttonNum[3] = 1; buttonHp[3] = 3;
     }
     private void OnTriggerEnter(Collider other)
     {

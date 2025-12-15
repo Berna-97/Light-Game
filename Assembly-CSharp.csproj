@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\GroundMover Script.cs" />
     <Compile Include="Assets\Scripts\TargetHold Script.cs" />
     <Compile Include="Assets\Scripts\EnemyDamage.cs" />
+    <Compile Include="Assets\Scripts\PauseScript.cs" />
     <Compile Include="Assets\Scripts\CameraSnapToFace.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Scripts\RollingGround Script.cs" />
