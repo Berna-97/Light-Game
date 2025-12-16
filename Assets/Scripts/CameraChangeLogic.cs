@@ -14,24 +14,32 @@ public class MultiCameraSwitcher : MonoBehaviour
     public bool target = false;
 
     private GameObject[] enemies;
-    private GameObject[] player;
+    private GameObject player;
+
+    private bool winCheck;
 
     void Start()
     {
         SwitchToCameraMoving();
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        winCheck = player.GetComponent<RollingGroundScript>().youWin;
     }
 
     public void Update()
     {
         // Example logic to switch cameras based on some condition
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        player = GameObject.FindGameObjectsWithTag("Player");
-       
-        if (enemies.Length == 0 && player != null)
+
+        if (winCheck)
         {
             SwitchToCameraMoving();
         }
-        else 
+        else if (enemies.Length == 0 && player != null)
+        {
+            SwitchToCameraMoving();
+        }
+        else
         {
             SwitchToCameraTarget();
         }

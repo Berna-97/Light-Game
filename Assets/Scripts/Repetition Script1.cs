@@ -3,7 +3,7 @@ using UnityEngine;
 public class Repetition : MonoBehaviour
 {
     public GameObject target;
-    public float speed = 40f;
+    public float speed = 50f;
     public float explodeDistance = 2.5f;
     public float damage = 1f;
     public float arcHeight = 1f; // Height of the arc

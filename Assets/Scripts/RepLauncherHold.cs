@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class RepLauncherHold : MonoBehaviour
@@ -15,37 +13,21 @@ public class RepLauncherHold : MonoBehaviour
     public float timer = 0;
     private bool hasHeld = false;
     public float spawnRate = 0.3f;
-    public float timeBetweenShots = 0.5f;
+    public float timeBetweenShots = 0.2f;
+    public int maxShots = 6;
     private TargetClickScript targetSystem;
     private List<GameObject> activeRockets = new List<GameObject>();
     private bool isFiring = false;
-
-
-    // Energy system
-    public float maxEnergy = 100f;
-    public float currentEnergy = 100f;
-    public float energyRechargeRate = 10f;
-    public float energyCostPerRocket = 20f;
-    private int rocketsQueued = 0;
 
     void Start()
     {
         targetSystem = FindFirstObjectByType<TargetClickScript>();
         if (targetSystem == null)
             Debug.LogWarning("TargetClickScript não encontrado!");
-
-        currentEnergy = maxEnergy;
     }
 
     void Update()
     {
-        if (currentEnergy < maxEnergy)
-        {
-            currentEnergy += energyRechargeRate * Time.deltaTime;
-            currentEnergy = Mathf.Min(currentEnergy, maxEnergy);
-        }
-
-
         if (isFiring)
             return;
 
@@ -53,7 +35,8 @@ public class RepLauncherHold : MonoBehaviour
         {
             if (rocketPrefab == null || spawnPosition == null) return;
 
-            if (currentEnergy < energyCostPerRocket) return;
+            // Check if player has reached max shots
+            if (activeRockets.Count >= maxShots) return;
 
             timer += Time.deltaTime;
             if (timer > spawnRate)
@@ -64,16 +47,10 @@ public class RepLauncherHold : MonoBehaviour
                     spawnPosition.transform.position + new Vector3(initialSpacing, 0, 0),
                     Quaternion.Euler(0, -90, 0)
                 );
-
                 activeRockets.Add(rocketObj);
-
                 initialSpacing -= spacing;
                 timer = 0;
-
-                currentEnergy -= energyCostPerRocket;
-                rocketsQueued++;
             }
-
         }
 
         if (Input.GetMouseButtonUp(0) && hasHeld)
@@ -84,11 +61,6 @@ public class RepLauncherHold : MonoBehaviour
             StartCoroutine(FireRockets());
         }
 
-        //foreach (var rocket in activeRockets)
-        //{
-        //    if (rocket != null)
-        //        rocket.SetTarget(targetSystem.Target);
-        //}
         activeRockets.RemoveAll(r => r == null);
     }
 
@@ -96,7 +68,6 @@ public class RepLauncherHold : MonoBehaviour
     {
         isFiring = true;
         GameObject currentTarget = targetSystem.Target;
-
         List<GameObject> rocketsToFire = new List<GameObject>(activeRockets);
 
         foreach (var rocketObj in rocketsToFire)
@@ -105,15 +76,12 @@ public class RepLauncherHold : MonoBehaviour
             {
                 Repetition rocket = rocketObj.AddComponent<Repetition>();
                 rocket.SetTarget(currentTarget);
-
                 yield return new WaitForSeconds(timeBetweenShots);
             }
         }
 
         activeRockets.Clear();
-
-        isFiring = false; // agora podes carregar mais rockets
+        isFiring = false;
     }
-
-
 }
+

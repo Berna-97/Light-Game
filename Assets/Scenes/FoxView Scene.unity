@@ -19,7 +19,7 @@ RenderSettings:
   m_FogMode: 1
   m_FogDensity: 0.01
   m_LinearFogStart: 1
-  m_LinearFogEnd: 122
+  m_LinearFogEnd: 150
   m_AmbientSkyColor: {r: 0.554717, g: 0.554717, b: 0.554717, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -4566,10 +4566,7 @@ MonoBehaviour:
   timer: 0
   spawnRate: 0.3
   timeBetweenShots: 0.2
-  maxEnergy: 100
-  currentEnergy: 100
-  energyRechargeRate: 10000
-  energyCostPerRocket: 20
+  maxShots: 6
 --- !u!114 &1125602114
 MonoBehaviour:
   m_ObjectHideFlags: 0
