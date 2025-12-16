@@ -7,38 +7,57 @@ public class Gunslinger : MonoBehaviour
     public Transform firePoint;
     public Transform player;
 
-    float shootDistance = 10f;
+    public int health;
+    public int maxHealth = 10;
+    public int minHealth = 9;
 
 
+    // Automatic shooting interval in seconds
+    public float shootInterval = 2f;
+    private float shootTimer = 1f;
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             Shoot();
         }
 
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-
-        if (distanceToPlayer <= shootDistance)
+        // automatic shooting timer
+        shootTimer += Time.deltaTime;
+        if (shootTimer >= shootInterval)
         {
             Shoot();
+            shootTimer = 1f;
         }
-
-
     }
-
 
     public void Shoot()
     {
+        if (firePoint == null || player == null || projectilePrefab == null)
+        {
+            Debug.LogWarning("Gunslinger: missing references for shooting");
+            return;
+        }
+
         firePoint.LookAt(player);
-        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        GameObject spawned = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        Projectile proj = spawned.GetComponent<Projectile>();
+
+        if (proj != null)
+        {
+            proj.SetOwner(transform);
+        }
     }
 
-    public void Die()
+    public void TakeDamage(int damage)
     {
-        Debug.LogWarning("Gunslinger defeated!");
-        Destroy(gameObject);
+        health -= damage;
+        if (health <= minHealth)
+        {
+            Debug.Log("Gunslinger defeated");
+            Destroy(this.gameObject);
+        }
     }
+
 }

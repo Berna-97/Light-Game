@@ -12,9 +12,8 @@ public class DeflectZone : MonoBehaviour
         Debug.LogWarning(proj.gameObject.name);
         if (proj != null && !proj.deflected)
         {
-            
-            Vector3 dir = other.transform.position - transform.position;
-            proj.Deflect(dir);
+            Debug.LogWarning("Calling Deflect");
+            proj.Deflect();
         }
     }
 }

@@ -7,7 +7,16 @@ public class Projectile : MonoBehaviour
 
     private Rigidbody rb;
     private object projectile;
-    
+    private Transform owner;
+
+    public int damage = 1;
+
+    private HealthSystem player;
+
+    public void SetOwner(Transform newOwner)
+    {
+        owner = newOwner;
+    }
 
     void Start()
     {
@@ -20,6 +29,8 @@ public class Projectile : MonoBehaviour
         {
             Debug.LogWarning("Projectile missing Rigidbody: " + gameObject.name);
         }
+
+        IgnoreSiblingProjectiles();
     }
 
     void Update()
@@ -37,34 +48,67 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void Deflect(Vector3 newDirection)
+    void IgnoreSiblingProjectiles()
+{
+    Collider myCol = GetComponent<Collider>();
+    Projectile[] allProjectiles = FindObjectsOfType<Projectile>();
+
+    foreach (Projectile p in allProjectiles)
     {
+        if (p != this && p.owner == owner)
+        {
+            Physics.IgnoreCollision(myCol, p.GetComponent<Collider>());
+        }
+    }
+}
+
+    public void Deflect()
+    {
+        
+        if (owner == null) return;
+
         deflected = true;
+        Debug.LogWarning("Is Deflected");
+
         if (rb != null)
         {
-        
-            rb.linearVelocity = newDirection.normalized * speed;
+            Debug.LogWarning("Changing direction to owner");
+            // Direction back to owner
+            Vector3 dirToOwner = owner.position - transform.position;
+            rb.linearVelocity = dirToOwner.normalized * speed;
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(UnityEngine.Collider other)
     {
+        HealthSystem healthSystem = other.gameObject.GetComponentInParent<HealthSystem>();
+
         // If projectile was deflected and hits enemy
-        if (deflected && collision.gameObject.CompareTag("EnemyR"))
+        if (deflected && other.gameObject.CompareTag("EnemyR"))
         {
-            if (collision.gameObject.TryGetComponent<Gunslinger>(out var enemy))
+            Debug.LogWarning("Projectile collided with: enemy");
+            if (other.gameObject.TryGetComponent<Gunslinger>(out var enemy))
             {
-                enemy.Die();
+                enemy.TakeDamage(damage);
             }
             Destroy(this.gameObject);
         }
 
         // If not deflected and hits player
-        if (!deflected && collision.gameObject.CompareTag("Player"))
+        if (!deflected && other.gameObject.CompareTag("Player"))
         {
+            Debug.LogWarning("Projectile collided with: player");
             // Player damage here
-            
-            Destroy(this.gameObject);
-        }
+            if (healthSystem != null)
+            {
+                Debug.LogWarning("Player takes damage");
+                healthSystem.TakeDamage(damage);
+                Destroy(this.gameObject);
+            } 
+            else {
+                Debug.LogError("No HealthSystem found on Player or its parents!");
+            }
+         }
+    
     }
 }

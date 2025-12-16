@@ -31,19 +31,19 @@ public class Opacity : MonoBehaviour
                 break;
 
             case 4:
-                opacity = 0.8f;
+                opacity = 0.7f;
                 break;
 
             case 3:
-                opacity = 0.6f;
+                opacity = 0.45f;
                 break;
 
             case 2:
-                opacity = 0.3f;
+                opacity = 0.2f;
                 break;
 
             case 1:
-                opacity = 0.1f;
+                opacity = 0.05f;
                 break;
 
             default:

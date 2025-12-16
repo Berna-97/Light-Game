@@ -17,7 +17,7 @@ public class DeflectSystem : MonoBehaviour
 
         if (Time.time - lastClickTime <= doubleClickTime)
             {
-               ActivateDeflect();
+              ActivateDeflect();
             }
     }
 
