@@ -7303,7 +7303,7 @@ MonoBehaviour:
   gate1: {fileID: 8084721789744926381, guid: 1fc621feef4715540ae48e9cd7f0a0bb, type: 3}
   gate2: {fileID: 8084721789744926381, guid: b5a8040926642cd45b2c76764bde7f3d, type: 3}
   youWin: {fileID: 1433125218}
-  totalGroundCount: 25
+  totalGroundCount: 15
   groundCount: 0
 --- !u!65 &2123087062
 BoxCollider:

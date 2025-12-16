@@ -98,7 +98,7 @@ public class EnemyMoveScript : MonoBehaviour
     private void Die()
     {
         if (gate !=null) { 
-            if (speed == 0)
+            if (isGate)
             {
                 gate.GetComponent<GateScript>().enabled = true;
             }
@@ -120,36 +120,44 @@ public class EnemyMoveScript : MonoBehaviour
         if (currentHealth == 6)
         {
             spriteRenderer.sprite = hexagon;
-            speed = 1f;
+            ChangeSpeed(1f);
         }
         if (currentHealth == 5)
         {
             spriteRenderer.sprite = pentagon;
-            speed = 1.5f;
+            ChangeSpeed(1.5f);
         }
         if (currentHealth == 4)
         {
             spriteRenderer.sprite = square;
-            speed = 2f;
+            ChangeSpeed(2f);
         }
         if (currentHealth == 3)
         {
             spriteRenderer.sprite = triangle;
-            speed = 3f;
+            ChangeSpeed(3f);
         }
         if (currentHealth == 2)
         {
             spriteRenderer.sprite = twoangle;
-            speed = 3f;
+            ChangeSpeed(3f);
         }
         if (currentHealth == 1)
         {
             spriteRenderer.sprite = line;
-            speed = 3f;
+            ChangeSpeed(3f);
         }
         else
         {
             //nothing
+        }
+    }
+
+    void ChangeSpeed(float newSpeed)
+    {
+        if (!isGate)
+        {
+            speed = newSpeed;
         }
     }
 

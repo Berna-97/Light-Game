@@ -30,6 +30,9 @@ public class RollingGroundScript : MonoBehaviour
         groundBefore[1] = 7; buttonNum[1] = 1; buttonHp[1] = 4;
         groundBefore[2] = 11; buttonNum[2] = 1; buttonHp[2] = 5;
         groundBefore[3] = 1; buttonNum[3] = 1; buttonHp[3] = 3;
+        groundBefore[4] = 16; buttonNum[4] = 2; buttonHp[4] = 4;
+        groundBefore[5] = 22; buttonNum[5] = 2; buttonHp[5] = 4;
+
     }
     private void OnTriggerEnter(Collider other)
     {
