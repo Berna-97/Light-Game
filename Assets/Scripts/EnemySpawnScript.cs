@@ -16,6 +16,7 @@ public class EnemySpawner : MonoBehaviour
             enabled = false;
             return;
         }
+        
     }
 
     private void Update()
@@ -31,11 +32,21 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemies()
     {
-        int enemyCount = Random.Range(1, 5); 
+        int enemyCount = Random.Range(1, 5);
+        var enemyHealth = enemyPrefab.GetComponent<EnemyMoveScript>();
 
         for (int i = 0; i < enemyCount; i++)
         {
             Vector3 spawnPos = GetRandomSpawnPosition();
+
+            if (enemyHealth != null)
+            {
+                enemyHealth.maxHealth = Random.Range(3, 7); // 7 é exclusivo, então vai de 3 a 6
+            }
+            else
+            {
+                Debug.LogWarning("EnemyHealth component not found on spawned enemy!");
+            }
             Instantiate(enemyPrefab, spawnPos, Quaternion.Euler(-15, 90, 0));
         }
 
@@ -44,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
 
     private Vector3 GetRandomSpawnPosition()
     {
-        float randomZ = Random.Range(-20f, 20f);
-        return new Vector3(-20f, 1f, randomZ);
+        float randomZ = Random.Range(-30f, 30f);
+        return new Vector3(-30f, 1f, randomZ);
     }
 }

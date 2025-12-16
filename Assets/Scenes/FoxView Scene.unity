@@ -2882,7 +2882,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767821391}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.6087605, w: 0.79335415}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -2.21, y: 1.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2893,7 +2893,7 @@ Transform:
   - {fileID: 634764432}
   - {fileID: 1444877062}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -75}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &773567573
 GameObject:
   m_ObjectHideFlags: 0
@@ -4357,7 +4357,6 @@ MonoBehaviour:
   currentEnergy: 100
   energyRechargeRate: 10000
   energyCostPerRocket: 20
-  energyCounter: {fileID: 813960183}
 --- !u!114 &1125602114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6119,7 +6118,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.019607844, g: 0.019607844, b: 0.019607844, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

@@ -15,7 +15,7 @@ public class RepLauncherHold : MonoBehaviour
     public float timer = 0;
     private bool hasHeld = false;
     public float spawnRate = 0.3f;
-    public float timeBetweenShots = 0.2f;
+    public float timeBetweenShots = 0.5f;
     private TargetClickScript targetSystem;
     private List<GameObject> activeRockets = new List<GameObject>();
     private bool isFiring = false;
@@ -27,7 +27,6 @@ public class RepLauncherHold : MonoBehaviour
     public float energyRechargeRate = 10f;
     public float energyCostPerRocket = 20f;
     private int rocketsQueued = 0;
-    public TextMeshProUGUI energyCounter;
 
     void Start()
     {
@@ -46,7 +45,6 @@ public class RepLauncherHold : MonoBehaviour
             currentEnergy = Mathf.Min(currentEnergy, maxEnergy);
         }
 
-        UpdateEnergyDisplay();
 
         if (isFiring)
             return;
@@ -117,14 +115,5 @@ public class RepLauncherHold : MonoBehaviour
         isFiring = false; // agora podes carregar mais rockets
     }
 
-
-
-    private void UpdateEnergyDisplay()
-    {
-        if (energyCounter != null)
-        {
-            energyCounter.text = $"Energy: {currentEnergy:F0}/{maxEnergy:F0}";
-        }
-    }
 
 }
