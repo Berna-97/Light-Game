@@ -10,6 +10,12 @@ public class CameraSnapToFace : MonoBehaviour
     public GameObject level3;
     public GameObject level4;
     public GameObject title;
+    
+    public GameObject prism;
+    public Material blue;
+    public Material green;
+    public Material orange;
+    public Material purple;
 
     private GameObject currentUI;
 
@@ -205,18 +211,22 @@ public class CameraSnapToFace : MonoBehaviour
             case 1:
                 level1.SetActive(true);
                 currentUI = level1;
+                prism.GetComponent<MeshRenderer>().material = blue;
                 break;
             case 2:
                 level2.SetActive(true);
                 currentUI = level2;
+                prism.GetComponent<MeshRenderer>().material = green;
                 break;
             case 3:
                 level3.SetActive(true);
                 currentUI = level3;
+                prism.GetComponent<MeshRenderer>().material = orange;
                 break;
             case 4:
                 level4.SetActive(true);
                 currentUI = level4;
+                prism.GetComponent<MeshRenderer>().material = purple;
                 break;
         }
     }
