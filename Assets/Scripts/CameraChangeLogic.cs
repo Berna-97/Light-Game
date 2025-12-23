@@ -7,6 +7,7 @@ public class MultiCameraSwitcher : MonoBehaviour
     [Header("Assign your two cameras")]
     public CinemachineCamera cameraTarget;
     public CinemachineCamera cameraMoving;
+    public GameObject youWin;
 
     [Header("Set the priorities")]
     public int activePriority = 5;
@@ -23,7 +24,7 @@ public class MultiCameraSwitcher : MonoBehaviour
         SwitchToCameraMoving();
         player = GameObject.FindGameObjectWithTag("Player");
 
-        winCheck = player.GetComponent<RollingGroundScript>().youWin;
+        winCheck = youWin;
     }
 
     public void Update()

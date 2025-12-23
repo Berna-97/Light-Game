@@ -18,6 +18,7 @@ public class Projectile : MonoBehaviour
         owner = newOwner;
     }
 
+    [System.Obsolete]
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -48,6 +49,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    [System.Obsolete]
     void IgnoreSiblingProjectiles()
 {
     Collider myCol = GetComponent<Collider>();

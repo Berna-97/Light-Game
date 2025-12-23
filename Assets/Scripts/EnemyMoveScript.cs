@@ -49,6 +49,8 @@ public class EnemyMoveScript : MonoBehaviour
     {
         SetHealthToMax();
         UpdateHealth();
+        //ChangeForm();
+
     }
 
     void Update()
@@ -105,7 +107,6 @@ public class EnemyMoveScript : MonoBehaviour
             if (isSingleButton)
             {
                 Transform gate2 = transform.parent.Find("Walls/Gate2");
-                Debug.Log(gate2);
                 if (gate2.GetComponent<GateScript>() != null)
                 {
                     gate2.GetComponent<GateScript>().enabled = true;
@@ -115,7 +116,7 @@ public class EnemyMoveScript : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    private void ChangeForm()
+    public void ChangeForm()
     {
         if (currentHealth == 6)
         {

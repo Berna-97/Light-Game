@@ -18,7 +18,7 @@ public class TargetClosestScript : MonoBehaviour
 
         if (enemies.Length == 0)
         {
-            Debug.LogWarning("E os inimigos onde andam?");
+            //Debug.LogWarning("E os inimigos onde andam?");
             return;
         }
         if (player == null)

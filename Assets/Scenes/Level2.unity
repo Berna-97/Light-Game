@@ -3168,7 +3168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e027a099d64d74cab4471b4dc20ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  enemyPrefab: {fileID: 3115433788120932386, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+  enemyPrefab: {fileID: 3115433788120932386, guid: 48b3911fcc161ab4cbc0182e69df0875, type: 3}
   spawnInterval: 10
 --- !u!4 &761462138
 Transform:
@@ -4895,6 +4895,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1130271037
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3742276861196612738, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
+      propertyPath: m_Name
+      value: GroundGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.52188
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.13284
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
 --- !u!1 &1175411249
 GameObject:
   m_ObjectHideFlags: 0
@@ -6904,6 +6961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Ground '
       objectReference: {fileID: 0}
+    - target: {fileID: 3742276861196612738, guid: b5ec56e014881bf4496c2ca570efedde, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5679887351136042800, guid: b5ec56e014881bf4496c2ca570efedde, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.52188
@@ -7299,9 +7360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d695c2afe06fda842a6bfa200da99bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RollingGroundScript
-  ground: {fileID: 3742276861196612738, guid: b5ec56e014881bf4496c2ca570efedde, type: 3}
-  gate1: {fileID: 8084721789744926381, guid: 1fc621feef4715540ae48e9cd7f0a0bb, type: 3}
-  gate2: {fileID: 8084721789744926381, guid: b5a8040926642cd45b2c76764bde7f3d, type: 3}
+  ground: {fileID: 3742276861196612738, guid: d1d1f102cf6127747b4f7f530c9f93f4, type: 3}
+  gate1: {fileID: 8084721789744926381, guid: b77289f5be417cf49bb38242554c096e, type: 3}
+  gate2: {fileID: 8084721789744926381, guid: c29ad2ca5a4425a4a8fc8a0feb5755eb, type: 3}
   youWin: {fileID: 1433125218}
   totalGroundCount: 20
   groundCount: 0
@@ -7581,6 +7642,7 @@ SceneRoots:
   - {fileID: 2130824681}
   - {fileID: 761462138}
   - {fileID: 1936933153}
+  - {fileID: 1130271037}
   - {fileID: 1446678508}
   - {fileID: 1491989569}
   - {fileID: 1764056355}

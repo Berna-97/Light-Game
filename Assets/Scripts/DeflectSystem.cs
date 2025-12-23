@@ -30,9 +30,9 @@ public class DeflectSystem : MonoBehaviour
     System.Collections.IEnumerator DeflectCoroutine()
     {
         deflectZone.SetActive(true);
-        Debug.LogWarning("Deflect Activated");
+        //Debug.LogWarning("Deflect Activated");
         yield return new WaitForSeconds(deflectActiveTime);
         deflectZone.SetActive(false);
-        Debug.LogWarning("Deflect Deactivated");
+        //Debug.LogWarning("Deflect Deactivated");
     }
 }

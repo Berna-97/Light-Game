@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d99ec56260f7ce47ba4e4df3d9613ce, type: 3}
+  m_Name: Level 1 Data
+  m_EditorClassIdentifier: Assembly-CSharp::GroundLevelData
+  totalGroundCount: 15
+  g0_before: 1
+  g0_buttons: 1
+  g0_hp: 2
+  g1_before: 6
+  g1_buttons: 1
+  g1_hp: 3
+  g2_before: 13
+  g2_buttons: 2
+  g2_hp: 2
+  g3_before: 999
+  g3_buttons: 999
+  g3_hp: 999
+  g4_before: 999
+  g4_buttons: 999
+  g4_hp: 999
+  g5_before: 999
+  g5_buttons: 999
+  g5_hp: 999
+  g6_before: 999
+  g6_buttons: 999
+  g6_hp: 999

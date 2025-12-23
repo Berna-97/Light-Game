@@ -5,67 +5,53 @@ using UnityEngine;
 // o que cria um loop infinito
 public class RollingGroundScript : MonoBehaviour
 {
+    public GroundLevelData levelData;
 
     public GameObject ground;
     public GameObject gate1;
     public GameObject gate2;
     public GameObject youWin;
 
-    public int totalGroundCount;
-    public int groundCount;
-  
-    private int[] groundBefore;
-    private int[] buttonNum;
-    private int[] buttonHp;
+    private int groundCount;
 
     private void Start()
     {
         groundCount = 0;
-
-        groundBefore = new int[5];
-        buttonNum = new int[5];
-        buttonHp = new int[5];
-
-        groundBefore[0] = 3; buttonNum[0] = 2; buttonHp[0] = 3;
-        groundBefore[1] = 7; buttonNum[1] = 1; buttonHp[1] = 4;
-        groundBefore[2] = 11; buttonNum[2] = 1; buttonHp[2] = 5;
-        groundBefore[3] = 1; buttonNum[3] = 1; buttonHp[3] = 3;
-        groundBefore[4] = 16; buttonNum[4] = 2; buttonHp[4] = 4;
-        groundBefore[5] = 22; buttonNum[5] = 2; buttonHp[5] = 4;
-
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Trigger") && groundCount <= totalGroundCount)
+        if (!other.CompareTag("Trigger")) return;
+
+        bool spawned = false;
+
+        for (int i = 0; i < levelData.totalGroundCount; i++)
         {
-            bool spawned = false;
+            levelData.GetData(i, out int before, out int buttons, out int hp);
 
-            for (int y = 0; y < groundBefore.Length; y++)
+            if (groundCount + 1 == before)
             {
-                if (groundCount + 1 == groundBefore[y])
-                {
-                    SpawnGate(buttonNum[y], buttonHp[y]);
-                    spawned = true;
-                    break;
-                }
-            }
-
-            if (!spawned)
-            {
-                Instantiate(ground);
+                SpawnGate(buttons, hp);
+                spawned = true;
+                break;
             }
         }
-        if (other.CompareTag("Trigger") && groundCount == totalGroundCount)
-            {
-                youWin.SetActive(true);           
-            }
 
-        groundCount++; 
+        if (!spawned && groundCount < levelData.totalGroundCount)
+            Instantiate(ground);
+
+        if (groundCount == levelData.totalGroundCount)
+            youWin.SetActive(true);
+
+        groundCount++;
     }
 
 
-    private void SpawnGate(int buttonsNum, int buttonsHp)
+
+
+private void SpawnGate(int buttonsNum, int buttonsHp)
     {
+
         switch (buttonsNum)
         {
 
@@ -81,6 +67,7 @@ public class RollingGroundScript : MonoBehaviour
 
                 script.maxHealth = buttonsHp;
                 script.SetHealthToMax();
+                script.enabled = false;
 
                 break;
 
@@ -88,16 +75,18 @@ public class RollingGroundScript : MonoBehaviour
                 GameObject gateTwo = Instantiate(gate2);
 
                 Transform blueSquare2 = gateTwo.transform.Find("Gate/Blue Square");
-                Transform blueSquare3 = gateTwo.transform.Find("Gate/Blue Square2");
-
+                Debug.Log(blueSquare2);
                 EnemyMoveScript script2 = blueSquare2.GetComponent<EnemyMoveScript>();
-                EnemyMoveScript script3 = blueSquare3.GetComponent<EnemyMoveScript>();
-
+                Debug.Log(script2);
                 script2.maxHealth = buttonsHp;
                 script2.SetHealthToMax();
 
+                Transform blueSquare3 = gateTwo.transform.Find("Gate/Blue Square2");
+                EnemyMoveScript script3 = blueSquare3.GetComponent<EnemyMoveScript>();
                 script3.maxHealth = buttonsHp;
                 script3.SetHealthToMax();
+
+
 
                 break;
 

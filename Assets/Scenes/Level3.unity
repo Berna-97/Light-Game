@@ -1670,7 +1670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &410957393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3168,7 +3168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e027a099d64d74cab4471b4dc20ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  enemyPrefab: {fileID: 3115433788120932386, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+  enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
   spawnInterval: 10
 --- !u!4 &761462138
 Transform:
@@ -6339,6 +6339,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a7740c2000dbcc349b958450690901d8, type: 3}
   m_PrefabInstance: {fileID: 896845332}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1589972174
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3742276861196612738, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
+      propertyPath: m_Name
+      value: GroundOrange
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.52188
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.13284
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679887351136042800, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
 --- !u!1 &1659467877
 GameObject:
   m_ObjectHideFlags: 0
@@ -6904,6 +6961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Ground '
       objectReference: {fileID: 0}
+    - target: {fileID: 3742276861196612738, guid: b5ec56e014881bf4496c2ca570efedde, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5679887351136042800, guid: b5ec56e014881bf4496c2ca570efedde, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.52188
@@ -7299,9 +7360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d695c2afe06fda842a6bfa200da99bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RollingGroundScript
-  ground: {fileID: 3742276861196612738, guid: b5ec56e014881bf4496c2ca570efedde, type: 3}
-  gate1: {fileID: 8084721789744926381, guid: 1fc621feef4715540ae48e9cd7f0a0bb, type: 3}
-  gate2: {fileID: 8084721789744926381, guid: b5a8040926642cd45b2c76764bde7f3d, type: 3}
+  ground: {fileID: 3742276861196612738, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
+  gate1: {fileID: 8084721789744926381, guid: fd398fe9cd0552a41a5249eac6c4515d, type: 3}
+  gate2: {fileID: 8084721789744926381, guid: c5497bdd021215f488312668b98a3456, type: 3}
   youWin: {fileID: 1433125218}
   totalGroundCount: 25
   groundCount: 0
@@ -7590,3 +7651,4 @@ SceneRoots:
   - {fileID: 410957395}
   - {fileID: 144119305}
   - {fileID: 535748747}
+  - {fileID: 1589972174}

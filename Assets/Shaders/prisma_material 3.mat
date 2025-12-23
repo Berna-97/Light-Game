@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: prisma_material 3
-  m_Shader: {fileID: -6465566751694194690, guid: c4c866c34a09ec242a1033d2d71d85bf, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 753ab116d64d9344988392eaaa25ecd9, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

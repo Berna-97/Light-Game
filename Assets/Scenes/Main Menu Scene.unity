@@ -2104,7 +2104,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 5b04333405f80a941ab2324fbdb1a3b2, type: 2}
-  - {fileID: 2100000, guid: b2fcea6c7d9dbab4ca781825705d50be, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4048,7 +4048,7 @@ MonoBehaviour:
   blue: {fileID: 2100000, guid: 5b04333405f80a941ab2324fbdb1a3b2, type: 2}
   green: {fileID: 2100000, guid: 2b83cb20f9e6d184ba04d73d0a8a5a65, type: 2}
   orange: {fileID: 2100000, guid: 1ebce78754ca0c141a9008e2460c4bac, type: 2}
-  purple: {fileID: 2100000, guid: a7c508d3670343d44bf677150bb25c1d, type: 2}
+  purple: {fileID: 2100000, guid: 5687344682251234f9b58d14e9717dcd, type: 2}
   autoRotateSpeed: 30
   snapSpeed: 3
 --- !u!1 &856423504
