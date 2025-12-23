@@ -18,6 +18,7 @@ public class RepLauncherHold : MonoBehaviour
     private TargetClickScript targetSystem;
     private List<GameObject> activeRockets = new List<GameObject>();
     private bool isFiring = false;
+    public AudioSource fireSfx;
 
     void Start()
     {
@@ -74,6 +75,7 @@ public class RepLauncherHold : MonoBehaviour
         {
             if (rocketObj != null)
             {
+                fireSfx.Play();
                 Repetition rocket = rocketObj.AddComponent<Repetition>();
                 rocket.SetTarget(currentTarget);
                 yield return new WaitForSeconds(timeBetweenShots);

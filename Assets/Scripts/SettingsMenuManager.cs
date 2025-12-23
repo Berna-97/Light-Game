@@ -23,6 +23,11 @@ public class SettingsMenuManager : MonoBehaviour
     public AudioClip clip;          // clip que quer tocar
     private bool isPlaying = false; // flag para toggle
 
+
+    public GameObject canvas;
+    public GameObject optionCanvas;
+    public PauseScript pauseScript;
+
     void Awake()
     {
         // ===== AUDIO =====
@@ -113,5 +118,12 @@ public class SettingsMenuManager : MonoBehaviour
             audioSource.Play();
             isPlaying = true;
         }
+    }
+
+    public void ReturnFromOptions()
+    {
+        canvas.SetActive(true);
+        optionCanvas.SetActive(false);
+        pauseScript.UnPause();
     }
 }

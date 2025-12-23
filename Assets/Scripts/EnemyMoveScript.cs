@@ -32,6 +32,7 @@ public class EnemyMoveScript : MonoBehaviour
     public bool isSingleButton;
     public GameObject gate;
     private Color originalColor;
+    private float savedValue;
 
     private List<GameObject> repetitions;
 
@@ -66,7 +67,7 @@ public class EnemyMoveScript : MonoBehaviour
     {
         //3d
         //transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
-        repetitions = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
+
         //2d
         transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
@@ -88,7 +89,6 @@ public class EnemyMoveScript : MonoBehaviour
     [System.Obsolete]
     public void TakeDamage(float damage, Vector3 projectilePosition)
     {
-        RepLauncherHold repLauncher = FindObjectOfType<RepLauncherHold>();
         if (!isGate)
         {
             ApplyKnockback(projectilePosition);
@@ -97,9 +97,16 @@ public class EnemyMoveScript : MonoBehaviour
         StartCoroutine(FlashRed());
 
 
+        repetitions = new List<GameObject>(GameObject.FindGameObjectsWithTag("Repetition"));
+
         Debug.Log(repetitions.Count);
 
         if (repetitions.Count == maxHealth)
+        {
+            savedValue = maxHealth;
+
+        }
+        if(savedValue == maxHealth)
         {
             repetitions.Clear();
             currentHealth -= damage;
@@ -112,9 +119,10 @@ public class EnemyMoveScript : MonoBehaviour
             if (currentHealth <= 0)
             {
                 Die();
+                savedValue = 0;
             }
         }
-        repetitions.Clear();
+        //repetitions.Clear();
 
     }
 
