@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\GameOverScreen.cs" />
     <Compile Include="Assets\Scripts\RollingGroundScript.cs" />
     <Compile Include="Assets\Scripts\DeflectZone.cs" />
+    <Compile Include="Assets\Scripts\RollingGroundInfiniteVersion.cs" />
     <Compile Include="Assets\Scripts\Repetition Script.cs" />
   </ItemGroup>
   <ItemGroup>

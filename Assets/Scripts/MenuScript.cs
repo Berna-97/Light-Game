@@ -15,10 +15,23 @@ public class MenuScript : MonoBehaviour
         optionCanvas.SetActive(false);
         snap = cam.GetComponent<CameraSnapToFace>();
     }
-    public void Play()
+    public void PlayLevel1()
     {
-        SceneManager.LoadScene("FoxView Scene");
+        SceneManager.LoadScene("Level1");
     }
+    public void PlayLevel2()
+    {
+        SceneManager.LoadScene("Level2");
+    }
+    public void PlayLevel3()
+    {
+        SceneManager.LoadScene("Level3");
+    }
+    public void PlayLevel4()
+    {
+        SceneManager.LoadScene("Level Infinite");
+    }
+
 
     public void Options()
     {

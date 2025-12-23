@@ -5483,7 +5483,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 74b0a10c4dcd43140b17a980cfad6d02, type: 2}
     - target: {fileID: 3965701056229638752, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
       propertyPath: m_Name
-      value: Gate (1)
+      value: Gate
       objectReference: {fileID: 0}
     - target: {fileID: 3965701056229638752, guid: 5e4d854671087824598b6d0f37f253d3, type: 3}
       propertyPath: m_IsActive

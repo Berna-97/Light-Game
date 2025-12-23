@@ -7360,12 +7360,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d695c2afe06fda842a6bfa200da99bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RollingGroundScript
+  levelData: {fileID: 11400000, guid: 8334f80c57a30cc4b8bb9b000680bdd2, type: 2}
   ground: {fileID: 3742276861196612738, guid: 0731501f93455ed48bf093aac5ce002c, type: 3}
   gate1: {fileID: 8084721789744926381, guid: fd398fe9cd0552a41a5249eac6c4515d, type: 3}
   gate2: {fileID: 8084721789744926381, guid: c5497bdd021215f488312668b98a3456, type: 3}
   youWin: {fileID: 1433125218}
-  totalGroundCount: 25
-  groundCount: 0
 --- !u!65 &2123087062
 BoxCollider:
   m_ObjectHideFlags: 0

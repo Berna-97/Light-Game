@@ -8,12 +8,24 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Scenes/FoxView Scene.unity
+    guid: 055415bc0c78a054995f3b279cbcfdc9
   - enabled: 1
     path: Assets/Scenes/Main Menu Scene.unity
     guid: 742e4e2d85277054a846e23d479087e7
   - enabled: 1
-    path: Assets/Scenes/FoxView Scene.unity
-    guid: 055415bc0c78a054995f3b279cbcfdc9
+    path: Assets/Scenes/Level1.unity
+    guid: 2a9db96468ee4744ebcc355261b6ee98
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 91e47c25262a4bc43b75992ef5685726
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 7646f5583cbee9c47a11cbec8f96e462
+  - enabled: 1
+    path: Assets/Scenes/Level Infinite.unity
+    guid: 679e33a06312c844a8acc6ab522b53e9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

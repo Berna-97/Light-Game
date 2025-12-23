@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d99ec56260f7ce47ba4e4df3d9613ce, type: 3}
   m_Name: Level 1 Data
   m_EditorClassIdentifier: Assembly-CSharp::GroundLevelData
-  totalGroundCount: 15
+  totalGroundCount: 10
   g0_before: 1
   g0_buttons: 1
   g0_hp: 2
   g1_before: 6
   g1_buttons: 1
   g1_hp: 3
-  g2_before: 13
+  g2_before: 9
   g2_buttons: 2
   g2_hp: 2
   g3_before: 999

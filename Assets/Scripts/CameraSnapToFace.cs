@@ -17,6 +17,13 @@ public class CameraSnapToFace : MonoBehaviour
     public Material orange;
     public Material purple;
 
+    public Camera mainCamera;
+    public Color blueColor;
+    public Color greenColor;
+    public Color orangeColor;
+    public Color purpleColor;
+
+
     private GameObject currentUI;
 
     public float autoRotateSpeed = 30f;
@@ -212,21 +219,25 @@ public class CameraSnapToFace : MonoBehaviour
                 level1.SetActive(true);
                 currentUI = level1;
                 prism.GetComponent<MeshRenderer>().material = blue;
+                mainCamera.backgroundColor = blueColor;
                 break;
             case 2:
                 level2.SetActive(true);
                 currentUI = level2;
                 prism.GetComponent<MeshRenderer>().material = green;
+                mainCamera.backgroundColor = greenColor;
                 break;
             case 3:
                 level3.SetActive(true);
                 currentUI = level3;
                 prism.GetComponent<MeshRenderer>().material = orange;
+                mainCamera.backgroundColor = orangeColor;
                 break;
             case 4:
                 level4.SetActive(true);
                 currentUI = level4;
                 prism.GetComponent<MeshRenderer>().material = purple;
+                mainCamera.backgroundColor = purpleColor;
                 break;
         }
     }

@@ -3,54 +3,45 @@ using UnityEngine;
 
 // Este script cria um chão novo quando o player passa por um trigger presente no chão,
 // o que cria um loop infinito
-public class RollingGroundScript : MonoBehaviour
+public class RollingGroundInfiniteVersion : MonoBehaviour
 {
-    public GroundLevelData levelData;
 
     public GameObject ground;
     public GameObject gate1;
     public GameObject gate2;
-    public GameObject youWin;
-
-    private int groundCount;
-
-    private void Start()
-    {
-        groundCount = 0;
-    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Trigger")) return;
 
-        bool spawned = false;
 
-        for (int i = 0; i < levelData.totalGroundCount; i++)
+        int chance = Random.Range(1, 5);
+        int buttons = Random.Range(1, 3);
+        int hp = Random.Range(1, 4);
+
+        Debug.Log("chance" + chance);
+        Debug.Log("but" + buttons);
+        Debug.Log("hp" +hp);
+
+
+        if (chance == 1)
         {
-            levelData.GetData(i, out int before, out int buttons, out int hp);
+            SpawnGate(buttons, hp);
 
-            if (groundCount + 1 == before)
-            {
-                Debug.Log("yea");
-                SpawnGate(buttons, hp);
-                spawned = true;
-                break;
-            }
+
+        }
+        else
+        {
+            Instantiate(ground);
         }
 
-        if (!spawned && groundCount < levelData.totalGroundCount)
-            Instantiate(ground);
 
-        if (groundCount == levelData.totalGroundCount)
-            youWin.SetActive(true);
-
-        groundCount++;
     }
 
 
 
 
-private void SpawnGate(int buttonsNum, int buttonsHp)
+    private void SpawnGate(int buttonsNum, int buttonsHp)
     {
 
         switch (buttonsNum)
@@ -95,5 +86,5 @@ private void SpawnGate(int buttonsNum, int buttonsHp)
                 Instantiate(ground);
                 break;
         }
-    } 
+    }
 }
