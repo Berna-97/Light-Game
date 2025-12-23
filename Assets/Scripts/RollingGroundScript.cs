@@ -109,7 +109,6 @@ public class RollingGroundScript : MonoBehaviour
                 EnemyMoveScript script = blueSquare.GetComponent<EnemyMoveScript>();
                 script.maxHealth = buttonsHp;
                 script.SetHealthToMax();
-                script.enabled = false;
                 break;
 
             case 2:

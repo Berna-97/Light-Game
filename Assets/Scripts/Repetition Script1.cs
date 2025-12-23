@@ -3,10 +3,10 @@ using UnityEngine;
 public class Repetition : MonoBehaviour
 {
     public GameObject target;
-    public float speed = 50f;
+    public float speed = 200f;
     public float explodeDistance = 2.5f;
     public float damage = 1f;
-    public float arcHeight = 1f; // Height of the arc
+    public float arcHeight = 1.2f; // Height of the arc
 
     private EnemyMoveScript enemyScript;
     private Vector3 startPosition;
@@ -45,6 +45,7 @@ public class Repetition : MonoBehaviour
         }
     }
 
+    [System.Obsolete]
     void Update()
     {
         if (target == null)

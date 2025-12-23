@@ -1,26 +1,31 @@
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Opacity : MonoBehaviour
 {
     public SpriteRenderer sprite;      // Drag in Inspector or auto-get
-    public HealthSystem playerHealth;        // Reference to your health script
+    //public HealthSystem playerHealth;        // Reference to your health script
+    public Material material;
 
     void Start()
     {
         // Auto-get SpriteRenderer if none assigned
         if (sprite == null)
             sprite = GetComponent<SpriteRenderer>();
+
+        if (material == null)
+            material = sprite.material;
     }
 
-    void Update()
-    {
-        UpdateOpacity(playerHealth.health);
-    }
+    //void Update()
+    //{
+    //    UpdateOpacity(playerHealth.health);
+    //}
 
-    void UpdateOpacity(int health)
+    public void UpdateOpacity(int health)
     {
         // Clamp between 1 and 5
-        health = Mathf.Clamp(health, 1, 5);
+        //health = Mathf.Clamp(health, 1, 5);
 
         float opacity;
 
@@ -28,6 +33,7 @@ public class Opacity : MonoBehaviour
         {
             case 5:
                 opacity = 1.0f;
+
                 break;
 
             case 4:
@@ -51,7 +57,9 @@ public class Opacity : MonoBehaviour
                 break;
         }
 
+        material.SetFloat("_Glow_Amount", health - 0.5f);
         // Apply alpha while keeping the sprite fully white
+        Debug.Log(opacity);
         Color c = sprite.color;
         c.a = opacity;
         sprite.color = c;

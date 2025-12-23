@@ -2992,7 +2992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8aa1b10d687d714fbd9830b9289556f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetClickScript
-  targetSpeed: 100
+  targetSpeed: 250
   holdThreshold: 0.15
 --- !u!114 &767821393
 MonoBehaviour:
@@ -4501,6 +4501,7 @@ MonoBehaviour:
   spawnRate: 0.3
   timeBetweenShots: 0.2
   maxShots: 6
+  activeRockets: []
 --- !u!114 &1125602114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6521,6 +6522,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2361849304884720861, guid: b5ec56e014881bf4496c2ca570efedde, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eaf7bf1abeab787439b5723405dc3320, type: 2}
     - target: {fileID: 3742276861196612738, guid: b5ec56e014881bf4496c2ca570efedde, type: 3}
       propertyPath: m_Name
       value: 'Ground '
@@ -6959,7 +6964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Opacity
   sprite: {fileID: 899600710}
-  playerHealth: {fileID: 2123087066}
+  material: {fileID: 0}
 --- !u!1001 &2130824681
 PrefabInstance:
   m_ObjectHideFlags: 0

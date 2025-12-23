@@ -14,7 +14,7 @@ public class RepLauncherHold : MonoBehaviour
     private bool hasHeld = false;
     public float spawnRate = 0.3f;
     public float timeBetweenShots = 0.2f;
-    public int maxShots = 6;
+    public int maxShots = 7;
     private TargetClickScript targetSystem;
     private List<GameObject> activeRockets = new List<GameObject>();
     private bool isFiring = false;
@@ -49,7 +49,7 @@ public class RepLauncherHold : MonoBehaviour
                 );
                 activeRockets.Add(rocketObj);
                 initialSpacing -= spacing;
-                timer = 0;
+                timer = activeRockets.Count * 0.03f;
             }
         }
 

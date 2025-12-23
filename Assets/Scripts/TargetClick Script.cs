@@ -8,7 +8,7 @@ public class TargetClickScript : MonoBehaviour
     private GameObject player;
 
     public GameObject Target { get; private set; } 
-    public float targetSpeed = 50f;
+    public float targetSpeed = 250f;
 
     private float clickStartTime;
     private bool isHold;

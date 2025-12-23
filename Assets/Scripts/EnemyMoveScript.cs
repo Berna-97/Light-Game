@@ -3,6 +3,7 @@ using TMPro;
 using NUnit.Framework; // Add this for TextMeshPro support
 using NUnit.Framework.Internal;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyMoveScript : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class EnemyMoveScript : MonoBehaviour
     public GameObject gate;
     private Color originalColor;
 
+    private List<GameObject> repetitions;
 
     private void Awake()
     {
@@ -64,7 +66,7 @@ public class EnemyMoveScript : MonoBehaviour
     {
         //3d
         //transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
-
+        repetitions = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
         //2d
         transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
@@ -83,12 +85,10 @@ public class EnemyMoveScript : MonoBehaviour
         }
     }
 
+    [System.Obsolete]
     public void TakeDamage(float damage, Vector3 projectilePosition)
     {
-        currentHealth -= damage;
-        currentHealth = Mathf.Max(currentHealth, 0); // Prevent negative health
-        UpdateHealth();
-
+        RepLauncherHold repLauncher = FindObjectOfType<RepLauncherHold>();
         if (!isGate)
         {
             ApplyKnockback(projectilePosition);
@@ -96,12 +96,26 @@ public class EnemyMoveScript : MonoBehaviour
 
         StartCoroutine(FlashRed());
 
-        if (isGate) { StartCoroutine("HealthTimer"); }
 
-        if (currentHealth <= 0)
+        Debug.Log(repetitions.Count);
+
+        if (repetitions.Count == maxHealth)
         {
-            Die();
+            repetitions.Clear();
+            currentHealth -= damage;
+            currentHealth = Mathf.Max(currentHealth, 0); // Prevent negative health
+            UpdateHealth();
+
+
+            //if (isGate) { StartCoroutine("HealthTimer"); }
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
+        repetitions.Clear();
+
     }
 
     /*

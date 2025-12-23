@@ -24,6 +24,13 @@ public class HealthSystem : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+
+        if (health < 9000) { 
+        Opacity opacityScript = this.GetComponent<Opacity>();
+        opacityScript.UpdateOpacity(health);
+        }
+
+
         if (health <= minHealth)
         {
             Destroy(this.gameObject);
