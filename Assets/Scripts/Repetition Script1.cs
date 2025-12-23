@@ -81,7 +81,7 @@ public class Repetition : MonoBehaviour
         {
             if (enemyScript != null)
             {
-                enemyScript.TakeDamage(damage);
+                enemyScript.TakeDamage(damage, transform.position);
             }
             Destroy(gameObject);
         }

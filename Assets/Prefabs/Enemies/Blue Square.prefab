@@ -131,8 +131,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMoveScript
   speed: 1
   rotationSpeed: 40
-  maxHealth: 4
+  maxHealth: 5
   healthText: {fileID: 0}
+  knockbackForce: 10
+  knockbackDuration: 0.1
+  flashDuration: 0.1
   spriteRenderer: {fileID: 1672596150020406690}
   hexagon: {fileID: 21300000, guid: 17ad3820cdef55a48b90ce2c8c3fa689, type: 3}
   pentagon: {fileID: 21300000, guid: 0926cf1a5654f754fa2bc31b935c79fe, type: 3}

@@ -10,9 +10,14 @@ public class EnemyMoveScript : MonoBehaviour
     public float rotationSpeed = 40.0f;
     public float maxHealth = 4f;
     public TextMeshProUGUI healthText; // Reference to UI text element
+    public float knockbackForce = 5f; // Knockback strength
+    public float knockbackDuration = 0.2f; // How long knockback lasts
+    public float flashDuration = 0.1f; // How long the red flash lasts
 
     private Transform target;
     private float currentHealth;
+    private bool isKnockedBack = false;
+    private Vector3 knockbackVelocity;
 
     public SpriteRenderer spriteRenderer;
     public Sprite hexagon;
@@ -25,6 +30,7 @@ public class EnemyMoveScript : MonoBehaviour
     private bool isGate;
     public bool isSingleButton;
     public GameObject gate;
+    private Color originalColor;
 
 
     private void Awake()
@@ -33,11 +39,12 @@ public class EnemyMoveScript : MonoBehaviour
         target = playerObj != null ? playerObj.transform : null;
 
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color; // Store the original color
 
         if (speed == 0)
         {
             isGate = true;
-            
+
         }
         else
         {
@@ -61,27 +68,70 @@ public class EnemyMoveScript : MonoBehaviour
         //2d
         transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
-        if (target != null && !isGate) { 
-        var step = speed * Time.deltaTime;
-        Vector3 destination = new(target.position.x, 0, target.position.z);
-        transform.position = Vector3.MoveTowards(transform.position, destination, step);
+        if (target != null && !isGate && !isKnockedBack)
+        {
+            var step = speed * Time.deltaTime;
+            Vector3 destination = new(target.position.x, 0, target.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, destination, step);
         }
 
+        // Apply knockback movement
+        if (isKnockedBack)
+        {
+            transform.position += knockbackVelocity * Time.deltaTime;
+            knockbackVelocity = Vector3.Lerp(knockbackVelocity, Vector3.zero, Time.deltaTime * 5f);
+        }
     }
 
-        public void TakeDamage(float damage)
+    public void TakeDamage(float damage, Vector3 projectilePosition)
     {
         currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0); // Prevent negative health
         UpdateHealth();
 
+        if (!isGate)
+        {
+            ApplyKnockback(projectilePosition);
+        }
+
+        StartCoroutine(FlashRed());
+
         if (isGate) { StartCoroutine("HealthTimer"); }
-       
 
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+
+    /*
+     public void TakeDamage(float damage)
+    {
+        TakeDamage(damage, target != null ? target.position : transform.position);
+    }
+    */
+
+    private void ApplyKnockback(Vector3 projectilePosition)
+    {
+        Vector3 knockbackDirection = (transform.position - projectilePosition).normalized;
+        knockbackVelocity = knockbackDirection * knockbackForce;
+
+        StartCoroutine(KnockbackRoutine());
+    }
+
+    private IEnumerator KnockbackRoutine()
+    {
+        isKnockedBack = true;
+        yield return new WaitForSeconds(knockbackDuration);
+        isKnockedBack = false;
+        knockbackVelocity = Vector3.zero;
+    }
+
+    private IEnumerator FlashRed()
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(flashDuration);
+        spriteRenderer.color = originalColor;
     }
 
     private void UpdateHealth()
@@ -94,12 +144,13 @@ public class EnemyMoveScript : MonoBehaviour
         {
             ChangeForm();
         }
-        
+
     }
 
     private void Die()
     {
-        if (gate !=null) { 
+        if (gate != null)
+        {
             if (isGate)
             {
                 gate.GetComponent<GateScript>().enabled = true;
@@ -150,7 +201,6 @@ public class EnemyMoveScript : MonoBehaviour
         }
         else
         {
-            //nothing
         }
     }
 
@@ -167,7 +217,7 @@ public class EnemyMoveScript : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         currentHealth = maxHealth;
     }
-    
+
     public void SetHealthToMax()
     {
         currentHealth = maxHealth;
