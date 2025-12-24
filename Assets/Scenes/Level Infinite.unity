@@ -665,6 +665,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.28
       objectReference: {fileID: 0}
+    - target: {fileID: 1882717451387544250, guid: bfb3802b32ae23f4ca7c66ef4fd32f87, type: 3}
+      propertyPath: Offset.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882717451387544250, guid: bfb3802b32ae23f4ca7c66ef4fd32f87, type: 3}
+      propertyPath: Offset.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 2552595551475945053, guid: bfb3802b32ae23f4ca7c66ef4fd32f87, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
@@ -888,7 +896,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3811404486688556919, guid: 8ae2c4f916c63994a9d84aa25591535b, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e241fef6ae8e5974c8ba336adb563667, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3c8ffc6bc1a72b54098f5a8d0ff8a1e3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4623,7 +4631,7 @@ MonoBehaviour:
   spawnRate: 0.3
   timeBetweenShots: 0.2
   maxShots: 7
-  activeRockets: []
+  fireSfx: {fileID: 177437132}
 --- !u!114 &1125602114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6510,6 +6518,9 @@ MonoBehaviour:
   qualityDropdown: {fileID: 370244211}
   audioSource: {fileID: 0}
   clip: {fileID: 0}
+  canvas: {fileID: 0}
+  optionCanvas: {fileID: 0}
+  pauseScript: {fileID: 0}
 --- !u!4 &1764056355
 Transform:
   m_ObjectHideFlags: 0
