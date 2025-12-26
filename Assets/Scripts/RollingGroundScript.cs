@@ -62,7 +62,7 @@ public class RollingGroundScript : MonoBehaviour
             isUpdatingSlider = true;
 
             float percentage = (float)groundCount / levelData.totalGroundCount * 100f;
-            Debug.Log($"Progresso: {groundCount}/{levelData.totalGroundCount} ({percentage:F1}%)");
+            //Debug.Log($"Progresso: {groundCount}/{levelData.totalGroundCount} ({percentage:F1}%)");
         }
     }
 
@@ -78,7 +78,7 @@ public class RollingGroundScript : MonoBehaviour
 
             if (groundCount + 1 == before)
             {
-                Debug.Log("yea");
+                //Debug.Log("yea");
                 SpawnGate(buttons, hp);
                 spawned = true;
                 break;

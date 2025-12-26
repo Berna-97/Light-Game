@@ -50,7 +50,8 @@ public class RepLauncherHold : MonoBehaviour
                 );
                 activeRockets.Add(rocketObj);
                 initialSpacing -= spacing;
-                timer = activeRockets.Count * 0.03f;
+                //timer = activeRockets.Count * 0.03f;
+                timer = 0;
             }
         }
 

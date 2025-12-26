@@ -50,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(enemyPrefab, spawnPos, Quaternion.Euler(-15, 90, 0));
         }
 
-        Debug.Log($"Spawned {enemyCount} enemies");
+        //Debug.Log($"Spawned {enemyCount} enemies");
     }
 
     private Vector3 GetRandomSpawnPosition()

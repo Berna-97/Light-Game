@@ -32,7 +32,9 @@ public class EnemyMoveScript : MonoBehaviour
     public bool isSingleButton;
     public GameObject gate;
     private Color originalColor;
-    private float savedValue;
+    public bool isBlocked = false;
+
+
 
     private List<GameObject> repetitions;
 
@@ -98,15 +100,13 @@ public class EnemyMoveScript : MonoBehaviour
 
 
         repetitions = new List<GameObject>(GameObject.FindGameObjectsWithTag("Repetition"));
+        Debug.Log(repetitions.Count);   
 
-        Debug.Log(repetitions.Count);
-
-        if (repetitions.Count == maxHealth)
+        if(repetitions.Count > currentHealth)
         {
-            savedValue = maxHealth;
-
+            isBlocked = true;
         }
-        if(savedValue == maxHealth)
+        if(repetitions.Count == currentHealth && !isBlocked)
         {
             repetitions.Clear();
             currentHealth -= damage;
@@ -119,8 +119,17 @@ public class EnemyMoveScript : MonoBehaviour
             if (currentHealth <= 0)
             {
                 Die();
-                savedValue = 0;
+
+                foreach (GameObject rep in repetitions)
+                {
+                    Destroy(rep);
+                }
+  
             }
+        }
+        if (repetitions.Count == 1)
+        {
+            isBlocked = false;
         }
         //repetitions.Clear();
 
