@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\EnemyMoveScript.cs" />
     <Compile Include="Assets\Scripts\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\Repetition Script1.cs" />
+    <Compile Include="Assets\Scripts\RepDestroyer.cs" />
     <Compile Include="Assets\Scripts\RepLauncherClick.cs" />
     <Compile Include="Assets\Scripts\TargetClosest Script.cs" />
     <Compile Include="Assets\Scripts\GunslingerShooter.cs" />

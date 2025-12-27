@@ -124,6 +124,10 @@ public class SettingsMenuManager : MonoBehaviour
     {
         canvas.SetActive(true);
         optionCanvas.SetActive(false);
-        pauseScript.UnPause();
+        if(pauseScript != null)
+        {
+            pauseScript.UnPause();
+        }
+       
     }
 }
