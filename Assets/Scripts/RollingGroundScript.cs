@@ -78,7 +78,6 @@ public class RollingGroundScript : MonoBehaviour
 
             if (groundCount + 1 == before)
             {
-                //Debug.Log("yea");
                 SpawnGate(buttons, hp);
                 spawned = true;
                 break;
@@ -117,9 +116,7 @@ public class RollingGroundScript : MonoBehaviour
             case 2:
                 GameObject gateTwo = Instantiate(gate2);
                 Transform blueSquare2 = gateTwo.transform.Find("Gate/Blue Square");
-                Debug.Log(blueSquare2);
                 EnemyMoveScript script2 = blueSquare2.GetComponent<EnemyMoveScript>();
-                Debug.Log(script2);
                 script2.maxHealth = buttonsHp;
                 script2.SetHealthToMax();
 

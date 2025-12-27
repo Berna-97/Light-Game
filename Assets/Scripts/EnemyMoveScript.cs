@@ -28,7 +28,7 @@ public class EnemyMoveScript : MonoBehaviour
     public Sprite twoangle;
     public Sprite line;
 
-    private bool isGate;
+    public bool isGate;
     public bool isSingleButton;
     public GameObject gate;
     private Color originalColor;
@@ -100,7 +100,7 @@ public class EnemyMoveScript : MonoBehaviour
 
 
         repetitions = new List<GameObject>(GameObject.FindGameObjectsWithTag("Repetition"));
-        Debug.Log(repetitions.Count);   
+      
 
         if(repetitions.Count > currentHealth)
         {

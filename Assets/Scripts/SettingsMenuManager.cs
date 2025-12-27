@@ -56,7 +56,6 @@ public class SettingsMenuManager : MonoBehaviour
     // ---------- QUALITY ----------
     public void OnQualityChanged(int index)
     {
-        Debug.Log("Mudou para qualidade: " + index);
         QualitySettings.SetQualityLevel(index, true);
         PlayerPrefs.SetInt("Quality", index);
         PlayerPrefs.Save();

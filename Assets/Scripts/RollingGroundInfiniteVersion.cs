@@ -19,10 +19,6 @@ public class RollingGroundInfiniteVersion : MonoBehaviour
         int buttons = Random.Range(1, 3);
         int hp = Random.Range(1, 4);
 
-        Debug.Log("chance" + chance);
-        Debug.Log("but" + buttons);
-        Debug.Log("hp" +hp);
-
 
         if (chance == 1)
         {
@@ -67,9 +63,7 @@ public class RollingGroundInfiniteVersion : MonoBehaviour
                 GameObject gateTwo = Instantiate(gate2);
 
                 Transform blueSquare2 = gateTwo.transform.Find("Gate/Blue Square");
-                Debug.Log(blueSquare2);
                 EnemyMoveScript script2 = blueSquare2.GetComponent<EnemyMoveScript>();
-                Debug.Log(script2);
                 script2.maxHealth = buttonsHp;
                 script2.SetHealthToMax();
 
