@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
 
             if (enemyHealth != null)
             {
-                enemyHealth.maxHealth = Random.Range(3, 7); // 7 é exclusivo, então vai de 3 a 6
+                enemyHealth.maxHealth = Random.Range(3, 6); // 7 é exclusivo, então vai de 3 a 5
             }
             else
             {

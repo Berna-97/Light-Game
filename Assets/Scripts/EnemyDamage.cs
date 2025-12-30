@@ -16,7 +16,7 @@ public class EnemyDamage : MonoBehaviour
         {
             if (hasCollided) return;
             HealthSystem healthSystem = other.gameObject.GetComponentInParent<HealthSystem>();
-
+            Debug.Log("yr");
 
             if (healthSystem != null)
             {

@@ -33,6 +33,7 @@ public class EnemyMoveScript : MonoBehaviour
     public GameObject gate;
     private Color originalColor;
     public bool isBlocked = false;
+    private AudioSource damaged;
 
 
 
@@ -40,6 +41,9 @@ public class EnemyMoveScript : MonoBehaviour
 
     private void Awake()
     {
+        GameObject damagedSfx = GameObject.Find("DamagedSFX");
+        damaged = damagedSfx.GetComponent<AudioSource>();
+
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         target = playerObj != null ? playerObj.transform : null;
 
@@ -97,6 +101,8 @@ public class EnemyMoveScript : MonoBehaviour
         }
 
         StartCoroutine(FlashRed());
+        damaged.Play();
+
 
 
         repetitions = new List<GameObject>(GameObject.FindGameObjectsWithTag("Repetition"));

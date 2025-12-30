@@ -7,12 +7,26 @@ public class GateScript : MonoBehaviour
     private bool isGateOpen = false;
     public int openess = 20;
     private int currentOpeness;
+    private bool isSfxPlaying = false;
+    private AudioSource rockSfx;
 
     // Update is called once per frame
+
+    private void Start()
+    {
+        rockSfx = GameObject.Find("DoorOpenSFX").GetComponent<AudioSource>();
+    }
     void FixedUpdate()
     {
         if (!isGateOpen && currentOpeness < openess)
         {
+            if (!isSfxPlaying)
+            {
+                isSfxPlaying=true;
+                rockSfx.Play();
+            }
+
+
             if (isLeftGate)
             {
                 transform.Rotate(0, -5f, 0);
@@ -24,6 +38,11 @@ public class GateScript : MonoBehaviour
 
             currentOpeness++;
         }
+        //else if(isSfxPlaying) {
+        //    rockSfx.Stop();
+        //    isSfxPlaying = false;
+        //}
+
     }
 
 }
