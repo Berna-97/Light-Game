@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Level/Ground Level Data")]
@@ -29,4 +30,20 @@ public class GroundLevelData : ScriptableObject
             case 6: before = g6_before; buttons = g6_buttons; hp = g6_hp; break;
         }
     }
+
+    [Header("Enemy Waves")]
+    public List<EnemyWave> enemyWaves = new List<EnemyWave>();
+
+}
+
+[System.Serializable]
+public class EnemyWave
+{
+    public int spawnAtGroundCount; // When to spawn this wave
+    public GameObject enemyPrefab; // The enemy prefab to spawn
+    public int enemyCount = 1; // How many enemies to spawn
+    public float spawnSpacing = 2f; // Distance between spawned enemies
+    public int minEnemyHealth = 3; // Minimum health for enemies in this wave
+    public int maxEnemyHealth = 6; // Maximum health for enemies in this wave
+
 }
