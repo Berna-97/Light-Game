@@ -4,7 +4,7 @@ using UnityEngine;
 // O chão move-se uniformemente de acordo com uma velocidade definida por groundSpeed
 public class GroundMoverScript : MonoBehaviour
 {
-    int groundSpeed = 15;
+    public float groundSpeed = 15;
 
     // Update is called once per frame
     void FixedUpdate()

@@ -9,25 +9,29 @@ public class RollingGroundScript : MonoBehaviour
     public GameObject ground;
     public GameObject gate1;
     public GameObject gate2;
+    public GameObject end;
     public GameObject youWin;
 
     [Header("Progress UI")]
     public Slider progressSlider;
     public float fillSpeed = 2f; //for the progress bar
 
-    [Header("Enemy Spawn Settings")]
-    public float spawnDelay = 0.1f; // Time between each enemy spawn
-
-    private int groundCount;
+    public int groundCount;
     private float targetSliderValue;
     private bool isUpdatingSlider;
 
+    public float spawnDelay = 0.1f;
+    private GameObject endObj = null;
+    private GroundMoverScript groundMover;
+    public float targetSpeed = 5f;
+    public float speedLerp = 4f;
     private void Start()
     {
         groundCount = 0;
         targetSliderValue = 0;
         isUpdatingSlider = false;
         InitializeProgressSlider();
+
     }
 
     private void Update()
@@ -35,10 +39,10 @@ public class RollingGroundScript : MonoBehaviour
         if (isUpdatingSlider && progressSlider != null)
         {
             progressSlider.value = Mathf.Lerp(progressSlider.value, targetSliderValue, Time.deltaTime * fillSpeed);
-            if (Mathf.Abs(progressSlider.value - targetSliderValue) < 0.01f)
-            {
-                progressSlider.value = targetSliderValue;
-                isUpdatingSlider = false;
+
+            if (endObj != null) { 
+                    progressSlider.value = targetSliderValue;
+                    isUpdatingSlider = false;
             }
         }
     }
@@ -78,7 +82,15 @@ public class RollingGroundScript : MonoBehaviour
         for (int i = 0; i < levelData.totalGroundCount; i++)
         {
             levelData.GetData(i, out int before, out int buttons, out int hp);
-            if (groundCount + 1 == before)
+            if (groundCount + 1 == levelData.totalGroundCount)
+            {
+                endObj = Instantiate(end);
+                groundMover = endObj.GetComponent<GroundMoverScript>();
+                targetSpeed = 1f;
+                spawned = true;
+                break;
+            }
+            else if (groundCount + 1 == before)
             {
                 SpawnGate(buttons, hp);
                 spawned = true;

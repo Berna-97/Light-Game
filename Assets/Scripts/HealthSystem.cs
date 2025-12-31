@@ -11,7 +11,9 @@ public class HealthSystem : MonoBehaviour
     public int minHealth = 0;
     public int damage = 1;
 
-    public void GameOver() {    
+    public void GameOver() {  
+
+        //death sfx
         deathScreen.Setup();
     }
 
@@ -24,6 +26,8 @@ public class HealthSystem : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        AudioSource sfx = GameObject.Find("DamagedSFX").GetComponent<AudioSource>();
+        sfx.Play();
 
         if (health < 9000) { 
         Opacity opacityScript = this.GetComponent<Opacity>();
