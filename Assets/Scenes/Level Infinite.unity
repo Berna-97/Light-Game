@@ -1096,6 +1096,22 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3011527084385064285, guid: bed32545213c99f42acb2b152bcc373f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764056354}
+    - target: {fileID: 3011527084385064285, guid: bed32545213c99f42acb2b152bcc373f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415609570839227378, guid: bed32545213c99f42acb2b152bcc373f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764056354}
+    - target: {fileID: 3415609570839227378, guid: bed32545213c99f42acb2b152bcc373f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeMasterVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 3548020620036178629, guid: bed32545213c99f42acb2b152bcc373f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1111,6 +1127,14 @@ PrefabInstance:
     - target: {fileID: 3548020620036178629, guid: bed32545213c99f42acb2b152bcc373f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -355
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105161306874477505, guid: bed32545213c99f42acb2b152bcc373f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1764056354}
+    - target: {fileID: 5105161306874477505, guid: bed32545213c99f42acb2b152bcc373f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeSfxVolume
       objectReference: {fileID: 0}
     - target: {fileID: 5252451519443819478, guid: bed32545213c99f42acb2b152bcc373f, type: 3}
       propertyPath: m_AnchorMax.x
