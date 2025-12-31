@@ -34,3 +34,82 @@ MonoBehaviour:
   g6_before: 19
   g6_buttons: 2
   g6_hp: 4
+  enemyWaves:
+  - spawnAtGroundCount: 1
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 5
+    spawnSpacing: 10
+    minEnemyHealth: 4
+    maxEnemyHealth: 5
+  - spawnAtGroundCount: 2
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 2
+    spawnSpacing: 15
+    minEnemyHealth: 3
+    maxEnemyHealth: 5
+  - spawnAtGroundCount: 3
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 3
+    spawnSpacing: 11
+    minEnemyHealth: 3
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 5
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 3
+    spawnSpacing: 12
+    minEnemyHealth: 5
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 7
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 3
+    spawnSpacing: 12
+    minEnemyHealth: 3
+    maxEnemyHealth: 4
+  - spawnAtGroundCount: 8
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 1
+    spawnSpacing: 2
+    minEnemyHealth: 4
+    maxEnemyHealth: 5
+  - spawnAtGroundCount: 10
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 2
+    spawnSpacing: 8
+    minEnemyHealth: 3
+    maxEnemyHealth: 5
+  - spawnAtGroundCount: 12
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 3
+    spawnSpacing: 9
+    minEnemyHealth: 2
+    maxEnemyHealth: 5
+  - spawnAtGroundCount: 13
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 1
+    spawnSpacing: 8
+    minEnemyHealth: 4
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 15
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 2
+    spawnSpacing: 10
+    minEnemyHealth: 3
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 16
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 3
+    spawnSpacing: 6
+    minEnemyHealth: 3
+    maxEnemyHealth: 5
+  - spawnAtGroundCount: 18
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 2
+    spawnSpacing: 10
+    minEnemyHealth: 3
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 19
+    enemyPrefab: {fileID: 3115433788120932386, guid: 5c0f2073279c52b4c8c871d69f485dcb, type: 3}
+    enemyCount: 3
+    spawnSpacing: 11
+    minEnemyHealth: 3
+    maxEnemyHealth: 6

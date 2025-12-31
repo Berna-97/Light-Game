@@ -19,7 +19,7 @@ MonoBehaviour:
   g1_before: 6
   g1_buttons: 1
   g1_hp: 3
-  g2_before: 9
+  g2_before: 8
   g2_buttons: 2
   g2_hp: 2
   g3_before: 999
@@ -34,3 +34,40 @@ MonoBehaviour:
   g6_before: 999
   g6_buttons: 999
   g6_hp: 999
+  enemyWaves:
+  - spawnAtGroundCount: 1
+    enemyPrefab: {fileID: 3115433788120932386, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+    enemyCount: 3
+    spawnSpacing: 8
+    minEnemyHealth: 3
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 3
+    enemyPrefab: {fileID: 3115433788120932386, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+    enemyCount: 5
+    spawnSpacing: 6
+    minEnemyHealth: 3
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 4
+    enemyPrefab: {fileID: 3115433788120932386, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+    enemyCount: 4
+    spawnSpacing: 9
+    minEnemyHealth: 3
+    maxEnemyHealth: 4
+  - spawnAtGroundCount: 5
+    enemyPrefab: {fileID: 3115433788120932386, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+    enemyCount: 2
+    spawnSpacing: 10
+    minEnemyHealth: 5
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 6
+    enemyPrefab: {fileID: 3115433788120932386, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+    enemyCount: 1
+    spawnSpacing: 5
+    minEnemyHealth: 3
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 8
+    enemyPrefab: {fileID: 3115433788120932386, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
+    enemyCount: 4
+    spawnSpacing: 6
+    minEnemyHealth: 3
+    maxEnemyHealth: 6

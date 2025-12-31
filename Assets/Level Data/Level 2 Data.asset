@@ -34,3 +34,64 @@ MonoBehaviour:
   g6_before: 999
   g6_buttons: 999
   g6_hp: 999
+  enemyWaves:
+  - spawnAtGroundCount: 1
+    enemyPrefab: {fileID: 3115433788120932386, guid: 48b3911fcc161ab4cbc0182e69df0875, type: 3}
+    enemyCount: 4
+    spawnSpacing: 7
+    minEnemyHealth: 3
+    maxEnemyHealth: 5
+  - spawnAtGroundCount: 2
+    enemyPrefab: {fileID: 3115433788120932386, guid: 48b3911fcc161ab4cbc0182e69df0875, type: 3}
+    enemyCount: 2
+    spawnSpacing: 9
+    minEnemyHealth: 4
+    maxEnemyHealth: 5
+  - spawnAtGroundCount: 4
+    enemyPrefab: {fileID: 3115433788120932386, guid: 48b3911fcc161ab4cbc0182e69df0875, type: 3}
+    enemyCount: 3
+    spawnSpacing: 9
+    minEnemyHealth: 3
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 5
+    enemyPrefab: {fileID: 3115433788120932386, guid: 48b3911fcc161ab4cbc0182e69df0875, type: 3}
+    enemyCount: 2
+    spawnSpacing: 11
+    minEnemyHealth: 4
+    maxEnemyHealth: 5
+  - spawnAtGroundCount: 6
+    enemyPrefab: {fileID: 3115433788120932386, guid: 48b3911fcc161ab4cbc0182e69df0875, type: 3}
+    enemyCount: 2
+    spawnSpacing: 11
+    minEnemyHealth: 5
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 8
+    enemyPrefab: {fileID: 3115433788120932386, guid: 48b3911fcc161ab4cbc0182e69df0875, type: 3}
+    enemyCount: 3
+    spawnSpacing: 11
+    minEnemyHealth: 5
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 10
+    enemyPrefab: {fileID: 3115433788120932386, guid: 48b3911fcc161ab4cbc0182e69df0875, type: 3}
+    enemyCount: 1
+    spawnSpacing: 10
+    minEnemyHealth: 5
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 12
+    enemyPrefab: {fileID: 3115433788120932386, guid: 48b3911fcc161ab4cbc0182e69df0875, type: 3}
+    enemyCount: 4
+    spawnSpacing: 6
+    minEnemyHealth: 3
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 13
+    enemyPrefab: {fileID: 3115433788120932386, guid: 48b3911fcc161ab4cbc0182e69df0875, type: 3}
+    enemyCount: 3
+    spawnSpacing: 15
+    minEnemyHealth: 3
+    maxEnemyHealth: 6
+  - spawnAtGroundCount: 14
+    enemyPrefab: {fileID: 3115433788120932386, guid: 48b3911fcc161ab4cbc0182e69df0875, type: 3}
+    enemyCount: 2
+    spawnSpacing: 5
+    minEnemyHealth: 3
+    maxEnemyHealth: 6

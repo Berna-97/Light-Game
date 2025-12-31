@@ -3493,6 +3493,7 @@ MonoBehaviour:
   youWin: {fileID: 1433125218}
   progressSlider: {fileID: 1559879141}
   fillSpeed: 0.3
+  spawnDelay: 0.1
 --- !u!65 &2123087062
 BoxCollider:
   m_ObjectHideFlags: 0

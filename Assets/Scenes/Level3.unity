@@ -1022,7 +1022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &761462137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4488,6 +4488,7 @@ MonoBehaviour:
   youWin: {fileID: 1433125218}
   progressSlider: {fileID: 2116289798}
   fillSpeed: 0.5
+  spawnDelay: 0.1
 --- !u!65 &2123087062
 BoxCollider:
   m_ObjectHideFlags: 0

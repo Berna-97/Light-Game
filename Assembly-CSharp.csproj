@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\CameraChangeLogic.cs" />
     <Compile Include="Assets\Scripts\WinScript.cs" />
     <Compile Include="Assets\Scripts\GroundLevelData.cs" />
+    <Compile Include="Assets\Scripts\GateDestroyedScript.cs" />
     <Compile Include="Assets\Scripts\GateScript.cs" />
     <Compile Include="Assets\Scripts\Opacity.cs" />
     <Compile Include="Assets\Scripts\TargetClick Script.cs" />

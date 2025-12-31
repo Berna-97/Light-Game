@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using TMPro;
-using NUnit.Framework; // Add this for TextMeshPro support
-using NUnit.Framework.Internal;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -173,10 +171,7 @@ public class EnemyMoveScript : MonoBehaviour
 
     private void UpdateHealth()
     {
-        if (healthText != null)
-        {
-            healthText.text = $"Enemy Health: {currentHealth:F0}/{maxHealth:F0}";
-        }
+        
         if (!isGate)
         {
             ChangeForm();

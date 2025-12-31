@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,9 @@ public class RollingGroundScript : MonoBehaviour
     [Header("Progress UI")]
     public Slider progressSlider;
     public float fillSpeed = 2f; //for the progress bar
+
+    [Header("Enemy Spawn Settings")]
+    public float spawnDelay = 0.1f; // Time between each enemy spawn
 
     private int groundCount;
     private float targetSliderValue;
@@ -103,39 +107,49 @@ public class RollingGroundScript : MonoBehaviour
         {
             if (wave.spawnAtGroundCount == groundCount + 1)
             {
-                // Calculate starting Z position to center the wave
-                float totalWidth = (wave.enemyCount - 1) * wave.spawnSpacing;
-                float startZ = -totalWidth / 2f;
-
-                // Clamp to stay within -30 to 30 range
-                startZ = Mathf.Max(-30f + totalWidth / 2f, Mathf.Min(30f - totalWidth / 2f, startZ));
-
-                for (int i = 0; i < wave.enemyCount; i++)
-                {
-                    float zPosition = startZ + (i * wave.spawnSpacing);
-                    zPosition = Mathf.Clamp(zPosition, -30f, 30f);
-
-                    Vector3 spawnPosition = new Vector3(-30f, 1f, zPosition);
-                    GameObject enemy = Instantiate(wave.enemyPrefab, spawnPosition, Quaternion.Euler(-15, 90, 0));
-
-                    // Try to set health if the enemy has an EnemyMoveScript
-                    EnemyMoveScript enemyScript = enemy.GetComponent<EnemyMoveScript>();
-                    if (enemyScript == null)
-                    {
-                        enemyScript = enemy.GetComponentInChildren<EnemyMoveScript>();
-                    }
-
-                    if (enemyScript != null)
-                    {
-                        int randomHealth = Random.Range(wave.minEnemyHealth, wave.maxEnemyHealth + 1);
-                        enemyScript.maxHealth = randomHealth;
-                        enemyScript.SetHealthToMax();
-                    }
-
-                    Debug.Log($"Spawned enemy wave at ground {groundCount + 1}: {wave.enemyCount} enemies");
-                }
+                StartCoroutine(SpawnWaveSequentially(wave));
             }
         }
+    }
+
+    private IEnumerator SpawnWaveSequentially(EnemyWave wave)
+    {
+        float totalWidth = (wave.enemyCount - 1) * wave.spawnSpacing;
+        float startZ = -totalWidth / 2f;
+
+        startZ = Mathf.Max(-35f + totalWidth / 2f, Mathf.Min(35f - totalWidth / 2f, startZ));
+
+        Debug.Log($"Starting enemy wave spawn at ground {groundCount + 1}: {wave.enemyCount} enemies");
+
+        for (int i = 0; i < wave.enemyCount; i++)
+        {
+            float zPosition = startZ + (i * wave.spawnSpacing);
+            zPosition = Mathf.Clamp(zPosition, -35f, 35f);
+
+            Vector3 spawnPosition = new Vector3(-30f, 1f, zPosition);
+            GameObject enemy = Instantiate(wave.enemyPrefab, spawnPosition, Quaternion.Euler(-15, 90, 0));
+
+            EnemyMoveScript enemyScript = enemy.GetComponent<EnemyMoveScript>();
+            if (enemyScript == null)
+            {
+                enemyScript = enemy.GetComponentInChildren<EnemyMoveScript>();
+            }
+
+            if (enemyScript != null)
+            {
+                int randomHealth = Random.Range(wave.minEnemyHealth, wave.maxEnemyHealth + 1);
+                enemyScript.maxHealth = randomHealth;
+                enemyScript.SetHealthToMax();
+            }
+
+            // Wait before spawning the next enemy
+            if (i < wave.enemyCount - 1)
+            {
+                yield return new WaitForSeconds(spawnDelay);
+            }
+        }
+
+        Debug.Log($"Completed enemy wave spawn at ground {groundCount + 1}");
     }
 
     private void SpawnGate(int buttonsNum, int buttonsHp)
