@@ -4,6 +4,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class SettingsMenuManager : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class SettingsMenuManager : MonoBehaviour
     public AudioSource audioSource; // seu AudioSource
     public AudioClip clip;          // clip que quer tocar
     private bool isPlaying = false; // flag para toggle
+
+    [Header("SFX Preview")]
+    [SerializeField] private AudioSource sfxPreviewSource;
 
 
     public GameObject canvas;
@@ -74,34 +78,35 @@ public class SettingsMenuManager : MonoBehaviour
 
     public void ChangeSfxVolume()
     {
+        StartSfxPreview();
         SetVolume(SFX_KEY, "SfxVol", sfxVol.value);
     }
 
     void SetVolume(string prefKey, string mixerParam, float sliderValue)
     {
-        // Limita entre -80 e 0 dB
-        sliderValue = Mathf.Clamp(sliderValue, -80f, 0f);
+        // Evita log(0)
+        float dB = Mathf.Log10(Mathf.Max(sliderValue, 0.0001f)) * 20f;
 
-        mainAudioMixer.SetFloat(mixerParam, sliderValue);
-        PlayerPrefs.SetFloat(prefKey, sliderValue);
+        mainAudioMixer.SetFloat(mixerParam, dB);
+        PlayerPrefs.SetFloat(prefKey, sliderValue); // guarda o valor do slider (0–1)
         PlayerPrefs.Save();
     }
 
     void LoadAudioSettings()
     {
-        float master = Mathf.Clamp(PlayerPrefs.GetFloat(MASTER_KEY, 0f), -80f, 0f);
-        float music = Mathf.Clamp(PlayerPrefs.GetFloat(MUSIC_KEY, 0f), -80f, 0f);
-        float sfx = Mathf.Clamp(PlayerPrefs.GetFloat(SFX_KEY, 0f), -80f, 0f);
+        float master = PlayerPrefs.GetFloat(MASTER_KEY, 1f);
+        float music = PlayerPrefs.GetFloat(MUSIC_KEY, 1f);
+        float sfx = PlayerPrefs.GetFloat(SFX_KEY, 1f);
 
         masterVol.SetValueWithoutNotify(master);
         musicVol.SetValueWithoutNotify(music);
         sfxVol.SetValueWithoutNotify(sfx);
 
-        // Aplica os valores suavemente para evitar solavancos
-        mainAudioMixer.SetFloat("MasterVol", master);
-        mainAudioMixer.SetFloat("MusicVol", music);
-        mainAudioMixer.SetFloat("SfxVol", sfx);
+        mainAudioMixer.SetFloat("MasterVol", Mathf.Log10(master) * 20f);
+        mainAudioMixer.SetFloat("MusicVol", Mathf.Log10(music) * 20f);
+        mainAudioMixer.SetFloat("SfxVol", Mathf.Log10(sfx) * 20f);
     }
+
 
     // ---------- TOGGLE AUDIO ----------
     public void TogglePlay()
@@ -129,4 +134,17 @@ public class SettingsMenuManager : MonoBehaviour
         }
        
     }
+
+    public void StartSfxPreview()
+    {
+        if (!sfxPreviewSource.isPlaying)
+            sfxPreviewSource.Play();
+    }
+
+    public void StopSfxPreview()
+    {
+        if (sfxPreviewSource.isPlaying)
+            sfxPreviewSource.Stop();
+    }
 }
+

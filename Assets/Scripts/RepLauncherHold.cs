@@ -28,6 +28,7 @@ public class RepLauncherHold : MonoBehaviour
     void Start()
     {
         spawnSfx = GameObject.FindGameObjectsWithTag("ChargeSfx")
+                             .OrderBy(go => go.transform.GetSiblingIndex())
                              .Select(go => go.GetComponent<AudioSource>())
                              .ToArray();
 
