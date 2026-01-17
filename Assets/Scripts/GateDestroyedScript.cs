@@ -17,6 +17,7 @@ public class GateDestroyedScript : MonoBehaviour
             AudioSource sfx = GameObject.Find("DoorCrashSFX").GetComponent<AudioSource>();
             sfx.Play();
 
+
             GameObject vfx = GameObject.Find("VfxExplosion");
             particleSystems = vfx.GetComponentsInChildren<ParticleSystem>(true);
 
@@ -25,7 +26,6 @@ public class GateDestroyedScript : MonoBehaviour
                 ps.Play();
             }
         }
-
 
     }
 

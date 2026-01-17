@@ -8,14 +8,18 @@ public class EnemyMoveScript : MonoBehaviour
     public float speed = 1.0f;
     public float rotationSpeed = 40.0f;
     public float maxHealth = 4f;
-    public TextMeshProUGUI healthText; // Reference to UI text element
-    public float knockbackForce = 5f; // Knockback strength
-    public float knockbackDuration = 0.2f; // How long knockback lasts
-    public float flashDuration = 0.1f; // How long the red flash lasts
+    public TextMeshProUGUI healthText;
+    public float knockbackForce = 5f;
+    public float knockbackDuration = 0.2f;
+    public float flashDuration = 0.1f;
+    public float spawnDuration = 1.0f;
+    public float deathDuration = 0.5f;
 
     private Transform target;
     private float currentHealth;
     private bool isKnockedBack = false;
+    private bool isSpawning = true;
+    private bool isDying = false;
     private Vector3 knockbackVelocity;
 
     public SpriteRenderer spriteRenderer;
@@ -33,7 +37,7 @@ public class EnemyMoveScript : MonoBehaviour
     public bool isBlocked = false;
     private AudioSource damaged;
 
-
+    private Material enemyMaterial;
 
     private List<GameObject> repetitions;
 
@@ -48,10 +52,12 @@ public class EnemyMoveScript : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color; // Store the original color
 
+        // Get or create material instance
+        enemyMaterial = spriteRenderer.material;
+
         if (speed == 0)
         {
             isGate = true;
-
         }
         else
         {
@@ -63,26 +69,56 @@ public class EnemyMoveScript : MonoBehaviour
     {
         SetHealthToMax();
         UpdateHealth();
-        //ChangeForm();
 
+        // Start the spawn animation
+        StartCoroutine(SpawnAnimation());
+    }
+
+    private IEnumerator SpawnAnimation()
+    {
+        float elapsed = 0f;
+
+        // Set initial dissolve value to 1
+        if (enemyMaterial.HasProperty("_DissolveAmount"))
+        {
+            enemyMaterial.SetFloat("_DissolveAmount", 1f);
+        }
+
+        while (elapsed < spawnDuration)
+        {
+            elapsed += Time.deltaTime;
+            float dissolveValue = Mathf.Lerp(1f, 0f, elapsed / spawnDuration);
+
+            // Update the dissolve property
+            if (enemyMaterial.HasProperty("_DissolveAmount"))
+            {
+                enemyMaterial.SetFloat("_DissolveAmount", dissolveValue);
+            }
+
+            yield return null;
+        }
+
+        // Ensure dissolve is exactly 0 at the end
+        if (enemyMaterial.HasProperty("_DissolveAmount"))
+        {
+            enemyMaterial.SetFloat("_DissolveAmount", 0f);
+        }
+
+        // Spawning complete, enemy can now move
+        isSpawning = false;
     }
 
     void Update()
     {
-        //3d
-        //transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
-
-        //2d
         transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
-        if (target != null && !isGate && !isKnockedBack)
+        if (target != null && !isGate && !isKnockedBack && !isSpawning && !isDying)
         {
             var step = speed * Time.deltaTime;
             Vector3 destination = new(target.position.x, 0, target.position.z);
             transform.position = Vector3.MoveTowards(transform.position, destination, step);
         }
 
-        // Apply knockback movement
         if (isKnockedBack)
         {
             transform.position += knockbackVelocity * Time.deltaTime;
@@ -90,7 +126,6 @@ public class EnemyMoveScript : MonoBehaviour
         }
     }
 
-    [System.Obsolete]
     public void TakeDamage(float damage, Vector3 projectilePosition)
     {
         if (!isGate)
@@ -101,24 +136,18 @@ public class EnemyMoveScript : MonoBehaviour
         StartCoroutine(FlashRed());
         damaged.Play();
 
-
-
         repetitions = new List<GameObject>(GameObject.FindGameObjectsWithTag("Repetition"));
-      
 
-        if(repetitions.Count > currentHealth)
+        if (repetitions.Count > currentHealth)
         {
             isBlocked = true;
         }
-        if(repetitions.Count == currentHealth && !isBlocked)
+        if (repetitions.Count == currentHealth && !isBlocked)
         {
             repetitions.Clear();
             currentHealth -= damage;
             currentHealth = Mathf.Max(currentHealth, 0); // Prevent negative health
             UpdateHealth();
-
-
-            //if (isGate) { StartCoroutine("HealthTimer"); }
 
             if (currentHealth <= 0)
             {
@@ -128,23 +157,13 @@ public class EnemyMoveScript : MonoBehaviour
                 {
                     Destroy(rep);
                 }
-  
             }
         }
         if (repetitions.Count == 1)
         {
             isBlocked = false;
         }
-        //repetitions.Clear();
-
     }
-
-    /*
-     public void TakeDamage(float damage)
-    {
-        TakeDamage(damage, target != null ? target.position : transform.position);
-    }
-    */
 
     private void ApplyKnockback(Vector3 projectilePosition)
     {
@@ -171,15 +190,13 @@ public class EnemyMoveScript : MonoBehaviour
 
     private void UpdateHealth()
     {
-        
         if (!isGate)
         {
             ChangeForm();
         }
-
     }
 
-    private void Die()
+    public void Die()
     {
         if (gate != null)
         {
@@ -196,6 +213,48 @@ public class EnemyMoveScript : MonoBehaviour
                 }
             }
         }
+
+        if (!isGate)
+        {
+            StartCoroutine(DeathAnimation());
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private IEnumerator DeathAnimation()
+    {
+        isDying = true;
+        float elapsed = 0f;
+
+        // Set initial dissolve value to 0
+        if (enemyMaterial.HasProperty("_DissolveAmount"))
+        {
+            enemyMaterial.SetFloat("_DissolveAmount", 0f);
+        }
+
+        while (elapsed < deathDuration)
+        {
+            elapsed += Time.deltaTime;
+            float dissolveValue = Mathf.Lerp(0f, 1f, elapsed / deathDuration);
+
+            // Update the dissolve property
+            if (enemyMaterial.HasProperty("_DissolveAmount"))
+            {
+                enemyMaterial.SetFloat("_DissolveAmount", dissolveValue);
+            }
+
+            yield return null;
+        }
+
+        // Ensure dissolve is exactly 1 at the end
+        if (enemyMaterial.HasProperty("_DissolveAmount"))
+        {
+            enemyMaterial.SetFloat("_DissolveAmount", 1f);
+        }
+
         Destroy(this.gameObject);
     }
 
@@ -231,9 +290,6 @@ public class EnemyMoveScript : MonoBehaviour
             spriteRenderer.sprite = line;
             ChangeSpeed(3f);
         }
-        else
-        {
-        }
     }
 
     void ChangeSpeed(float newSpeed)
@@ -255,5 +311,4 @@ public class EnemyMoveScript : MonoBehaviour
         currentHealth = maxHealth;
         ChangeForm();
     }
-
 }
