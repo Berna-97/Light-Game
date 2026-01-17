@@ -8,14 +8,19 @@ public class Onboarding : MonoBehaviour
     GameObject canvas;
     GameObject onboardingCanvas;
     VideoPlayer player;
+    AudioSource music;
+    GameObject OnboardPlayer;
 
     void Start()
     {
         canvas = GameObject.Find("Canvas");
         onboardingCanvas = GameObject.Find("OnboardCanvas");
+        music = GameObject.Find("Music").GetComponent<AudioSource>();
         canvas.SetActive(false);
         player = GameObject.Find("OnboardPlayer").GetComponent<VideoPlayer>();
         player.loopPointReached += OnVideoEnd;
+        music.enabled = false;
+        OnboardPlayer = GameObject.Find("OnboardPlayer");
 
 
     }
@@ -24,6 +29,8 @@ public class Onboarding : MonoBehaviour
     {
         canvas.SetActive(true);
         this.gameObject.SetActive(false);
+        music.enabled = true;
+        OnboardPlayer.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,6 +40,8 @@ public class Onboarding : MonoBehaviour
         {
             onboardingCanvas.SetActive(false);
             canvas.SetActive(true);
+            music.enabled = true;
+            OnboardPlayer.SetActive(false);
         }
     }
 }
