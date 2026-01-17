@@ -1021,6 +1021,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6556210225738173012, guid: 3b9af68f0c78cfd4bbc418b78c5b35be, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7904658675486956185, guid: 3b9af68f0c78cfd4bbc418b78c5b35be, type: 3}
       propertyPath: m_Name
       value: deathScreen
@@ -1030,6 +1034,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b9af68f0c78cfd4bbc418b78c5b35be, type: 3}
+--- !u!114 &596721575 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1908870346472952267, guid: 3b9af68f0c78cfd4bbc418b78c5b35be, type: 3}
+  m_PrefabInstance: {fileID: 596721574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d920a2604e77a5447b5142ef4054909e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &634764431
 GameObject:
   m_ObjectHideFlags: 0
@@ -4013,7 +4028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a366a990f3c4a1045ab625b56043d07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
-  deathScreen: {fileID: 0}
+  deathScreen: {fileID: 596721575}
   health: 0
   maxHealth: 5
   minHealth: 0
