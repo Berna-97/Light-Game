@@ -43,7 +43,7 @@ MonoBehaviour:
     maxEnemyHealth: 6
   - spawnAtGroundCount: 3
     enemyPrefab: {fileID: 3115433788120932386, guid: fdea197febbd6c3458563d6d37f23ef4, type: 3}
-    enemyCount: 5
+    enemyCount: 4
     spawnSpacing: 6
     minEnemyHealth: 3
     maxEnemyHealth: 6

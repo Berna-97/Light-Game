@@ -133,6 +133,11 @@ MonoBehaviour:
   rotationSpeed: 40
   maxHealth: 4
   healthText: {fileID: 0}
+  knockbackForce: 5
+  knockbackDuration: 0.2
+  flashDuration: 0.1
+  spawnDuration: 1
+  deathDuration: 0.5
   spriteRenderer: {fileID: 1672596150020406690}
   hexagon: {fileID: 21300000, guid: 21fff5e54fc764c49824699d63dbe484, type: 3}
   pentagon: {fileID: 21300000, guid: c37cc36e575095a42a5ceaf7f22cf7be, type: 3}
@@ -140,8 +145,12 @@ MonoBehaviour:
   triangle: {fileID: 21300000, guid: 7c9ac5a4365919240970e3a29756c104, type: 3}
   twoangle: {fileID: 21300000, guid: ffe553d3b09173a4fa94ad2bf29661f2, type: 3}
   line: {fileID: 21300000, guid: 3c76653489f36804489572adc35f9402, type: 3}
+  isGate: 0
   isSingleButton: 0
   gate: {fileID: 0}
+  isBlocked: 0
+  hitVFXPrefab: {fileID: 4687486524406018420, guid: 72ff7fd19d990774a8b0e4b72c7e3a70, type: 3}
+  VFXDestroyDelay: 2
 --- !u!114 &4042470711600504363
 MonoBehaviour:
   m_ObjectHideFlags: 0

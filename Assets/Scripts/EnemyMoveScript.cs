@@ -41,6 +41,9 @@ public class EnemyMoveScript : MonoBehaviour
 
     private List<GameObject> repetitions;
 
+    public GameObject hitVFXPrefab;
+    public float VFXDestroyDelay = 2f;
+
     private void Awake()
     {
         GameObject damagedSfx = GameObject.Find("DamagedSFX");
@@ -136,6 +139,10 @@ public class EnemyMoveScript : MonoBehaviour
         StartCoroutine(FlashRed());
         damaged.Play();
 
+        if(!isBlocked) { 
+        PlayHitVFX();
+        }
+
         repetitions = new List<GameObject>(GameObject.FindGameObjectsWithTag("Repetition"));
 
         if (repetitions.Count > currentHealth)
@@ -163,7 +170,27 @@ public class EnemyMoveScript : MonoBehaviour
         {
             isBlocked = false;
         }
+
+
     }
+
+    private void PlayHitVFX()
+    {
+        if (hitVFXPrefab != null)
+        {
+            // Instantiate the VFX at the enemy's position with optional offset
+            Vector3 spawnPosition = transform.position;
+            GameObject vfxInstance = Instantiate(hitVFXPrefab, spawnPosition, Quaternion.identity);
+
+            // Destroy the VFX after a delay
+            Destroy(vfxInstance, VFXDestroyDelay);
+        }
+        else
+        {
+            Debug.LogWarning("Hit VFX Prefab is not assigned on " + gameObject.name);
+        }
+    }
+
 
     private void ApplyKnockback(Vector3 projectilePosition)
     {
