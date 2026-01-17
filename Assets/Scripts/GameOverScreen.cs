@@ -16,6 +16,7 @@ public class GameOverScreen : MonoBehaviour
     {
         // Reload the current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       
     }
 
     public void ExitButton()
