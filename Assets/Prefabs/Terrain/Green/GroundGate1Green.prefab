@@ -53,6 +53,8 @@ MonoBehaviour:
   knockbackForce: 5
   knockbackDuration: 0.2
   flashDuration: 0.1
+  spawnDuration: 1
+  deathDuration: 0.5
   spriteRenderer: {fileID: 4951086453718981522}
   hexagon: {fileID: 21300000, guid: 17ad3820cdef55a48b90ce2c8c3fa689, type: 3}
   pentagon: {fileID: 21300000, guid: 0926cf1a5654f754fa2bc31b935c79fe, type: 3}
@@ -3335,9 +3337,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1871470730045490321}
     - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: line
+      value: 
+      objectReference: {fileID: 21300000, guid: ee7866658bfbf62458f5aad3a0ced674, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
       propertyPath: speed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: square
+      value: 
+      objectReference: {fileID: 21300000, guid: c9350f277212a8b44afb4662c3b01d4a, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: hexagon
+      value: 
+      objectReference: {fileID: 21300000, guid: 37dfde93749ae3941a5fb01f58b9b9e6, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: pentagon
+      value: 
+      objectReference: {fileID: 21300000, guid: e22ed4804feb47e40848b1d25d6b9585, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: triangle
+      value: 
+      objectReference: {fileID: 21300000, guid: 71f69727ea09fde408b4bd2d4ecb01df, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: twoangle
+      value: 
+      objectReference: {fileID: 21300000, guid: d278ca8160396db4583c2e8c9551f9d7, type: 3}
     - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
       propertyPath: isLeftGate
       value: 1

@@ -1034,6 +1034,8 @@ MonoBehaviour:
   knockbackForce: 5
   knockbackDuration: 0.2
   flashDuration: 0.1
+  spawnDuration: 1
+  deathDuration: 0.5
   spriteRenderer: {fileID: 0}
   hexagon: {fileID: 21300000, guid: 17ad3820cdef55a48b90ce2c8c3fa689, type: 3}
   pentagon: {fileID: 21300000, guid: 0926cf1a5654f754fa2bc31b935c79fe, type: 3}
@@ -1475,6 +1477,8 @@ MonoBehaviour:
   knockbackForce: 5
   knockbackDuration: 0.2
   flashDuration: 0.1
+  spawnDuration: 1
+  deathDuration: 0.5
   spriteRenderer: {fileID: 0}
   hexagon: {fileID: 21300000, guid: 17ad3820cdef55a48b90ce2c8c3fa689, type: 3}
   pentagon: {fileID: 21300000, guid: 0926cf1a5654f754fa2bc31b935c79fe, type: 3}
@@ -1841,9 +1845,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8649349529573355479}
     - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: line
+      value: 
+      objectReference: {fileID: 21300000, guid: 3c76653489f36804489572adc35f9402, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
       propertyPath: speed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: square
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ecfe0cf9f0a1614691e8e572c05ff67, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: hexagon
+      value: 
+      objectReference: {fileID: 21300000, guid: 21fff5e54fc764c49824699d63dbe484, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: pentagon
+      value: 
+      objectReference: {fileID: 21300000, guid: c37cc36e575095a42a5ceaf7f22cf7be, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: triangle
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c9ac5a4365919240970e3a29756c104, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: twoangle
+      value: 
+      objectReference: {fileID: 21300000, guid: ffe553d3b09173a4fa94ad2bf29661f2, type: 3}
     - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
       propertyPath: maxHealth
       value: 4
@@ -1973,9 +2001,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3285583518096448545}
     - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: line
+      value: 
+      objectReference: {fileID: 21300000, guid: 3c76653489f36804489572adc35f9402, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
       propertyPath: speed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: square
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ecfe0cf9f0a1614691e8e572c05ff67, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: hexagon
+      value: 
+      objectReference: {fileID: 21300000, guid: 21fff5e54fc764c49824699d63dbe484, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: pentagon
+      value: 
+      objectReference: {fileID: 21300000, guid: c37cc36e575095a42a5ceaf7f22cf7be, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: triangle
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c9ac5a4365919240970e3a29756c104, type: 3}
+    - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
+      propertyPath: twoangle
+      value: 
+      objectReference: {fileID: 21300000, guid: ffe553d3b09173a4fa94ad2bf29661f2, type: 3}
     - target: {fileID: 13215659367189261, guid: 24dcc7263a8f177439d2676ae6ba0eff, type: 3}
       propertyPath: maxHealth
       value: 4
